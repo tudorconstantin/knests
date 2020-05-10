@@ -1,0 +1,37 @@
+type User {
+  email: String!
+  roles: [UserRoles!]!
+  status: String!
+  createdAt: String
+  updatedAt: String
+}
+
+enum UserRoles {
+  ADMIN
+  TEACHER
+  PARENT
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type Query {
+  user(userId: ID!): User
+}
+
+type Mutation {
+  signup(user: UserSignupInput): User
+  addUser(user: UserAddInput): User
+}
+
+input UserAddInput{
+  email: String!
+  roles: [UserRoles!]!
+}
+
+input UserSignupInput{
+  email: String!
+  password: String!
+}

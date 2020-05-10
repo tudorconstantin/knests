@@ -1,0 +1,13 @@
+version: "3.5"
+
+services:
+  client:
+    command: nginx -g "daemon off;"
+
+  server:
+    env_file:
+      - ./server/docker/staging.env
+    environment:
+      NODE_ENV: staging
+    command: "npm start"
+

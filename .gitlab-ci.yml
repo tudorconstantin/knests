@@ -1,0 +1,93 @@
+image: docker:19.03.1
+#image: "docker/compose:1.21.2"
+
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  # When using dind, it's wise to use the overlayfs driver for
+  # improved performance.
+  DOCKER_DRIVER: overlay2
+
+  DOCKER_TLS_CERTDIR: "/certs"
+  CI_REGISTRY: "registry.gitlab.prforge.com"
+
+before_script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  - docker info
+
+build:
+  stage: build
+  variables:
+    NODE_ENV: build
+  environment:
+    name: build
+  image:
+    name: docker/compose:1.21.2
+    entrypoint: ["/bin/sh", "-c"]
+  script:
+    - echo "CONTAINERS TAG ${CI_COMMIT_SHORT_SHA:-latest}"
+    #- docker version # verify docker cli is there. Also prints server info
+    #- docker-compose version # verify the docker-compose cli is there
+    #- docker-compose -f docker-compose.yml -f docker-compose.build.yml config #checking var substitution
+    - docker-compose -f docker-compose.yml -f docker-compose.build.yml build
+    - docker-compose -f docker-compose.yml -f docker-compose.build.yml push
+  tags:
+    - builder
+
+test:
+  stage: test
+  environment:
+    name: test
+  image:
+    name: docker/compose:1.21.2
+    entrypoint: ["/bin/sh", "-c"]
+  variables:
+    NODE_ENV: test
+    NETWORK: test
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker info
+    - echo "Running tests for TAG ${CI_COMMIT_SHORT_SHA:-latest}"
+    - docker-compose -f docker-compose.yml -f docker-compose.test.yml up --abort-on-container-exit --renew-anon-volumes
+  tags:
+    - builder
+#    - test
+
+deploy_staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging server"
+    - docker stack deploy --with-registry-auth -c docker-compose.yml -c docker-compose.staging.yml knests-staging
+  variables:
+    NODE_ENV: staging
+    EXTERNAL_URL: knests-staging.prforge.com
+    NETWORK: staging
+    SERVICE_PORT: 8080
+  environment:
+    name: staging
+  only:
+    - master
+  tags:
+    - staging
+
+deploy_prod:
+  stage: deploy
+  script:
+    - echo "Deploy to production server"
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker stack deploy --with-registry-auth -c docker-compose.yml -c docker-compose.production.yml knests-production
+  variables:
+    NODE_ENV: production
+    EXTERNAL_URL: knests.prforge.com
+    NETWORK: production
+    SERVICE_PORT: 8080
+  environment:
+    name: production
+  when: manual
+  only:
+    - master
+  tags:
+    - production

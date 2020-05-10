@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  client:
+    build: 
+      context: ./client
+      target: app
+      args: #we need these vars at containers' build time to configure nginx
+      - API_URL=server:8081
+      - PORT=8080
+      - NGINX_PORT=8080
+
+  server:
+    build: 
+      context: ./server
+      target: app

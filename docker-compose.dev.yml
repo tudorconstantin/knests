@@ -1,0 +1,55 @@
+version: "3.5"
+
+networks:
+  knests-dev:
+    external: true
+  knests-production:
+    external: false
+  knests-staging:
+    external: false
+
+services:
+  client:
+    command: node server.js --hostname 0.0.0.0 --port="${SERVICE_PORT:-8080}"
+    build: 
+      context: ./client
+      target: builder
+      args: 
+        - SERVER_URL=localhost:8080
+    ports:
+      - "8080:8080"
+
+
+  server:
+    command: npm run start:dev
+
+    build: 
+      context: ./server      
+      target: builder
+    env_file:
+      - ./server/docker/dev.env
+    networks:
+      - "knests-dev"
+    ports:
+      - "8000:8081"
+    environment:
+      DATABASE_URL: postgres://admin-dev:5UPP3rSecr3tPAssword@postgres:5432/knests-dev
+      JWT_SECRET: "###98347likjnv980u*&^#(*&^^^#(*_|_&#_|_KJH#JKHG#_|_*(&#_|_*&#_|_(*&#^(*&#^_|_(*&#^_|_LKJ;o98(*SLKDJHLSKJH<M>n;loi098df904987"
+  
+  postgres:
+    environment:
+      DB_HOST: postgresql
+      POSTGRES_DB: knests-dev
+      POSTGRES_USER: admin-dev
+      POSTGRES_PASSWORD: 5UPP3rSecr3tPAssword
+
+    ports: 
+      - "54329:5432"
+    networks:
+      - "knests-dev"
+    volumes:
+      - knests_db_dev:/var/lib/postgresql/data
+  
+volumes:
+  knests_db_dev:
+

@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  client:
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
+        window: 120s
+    command: nginx -g "daemon off;"
+
+  server:
+    env_file:
+      - ./server/docker/production.env
+    environment:
+      NODE_ENV: production
+    command: "npm start"

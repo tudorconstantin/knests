@@ -1,0 +1,44 @@
+version: "3.5"
+
+networks:
+  knests-test:
+    # external: true
+    
+    
+services:
+  client:
+    # command: npm run test
+    command: echo "skipping UI tests for now"
+    build: 
+      context: ./client
+      target: builder      
+    networks:
+      - "knests-test"
+
+
+  server:
+    command: npm run test:e2e
+
+    build: 
+      context: ./server      
+      target: app
+    restart: "no"
+    env_file:
+      - ./server/docker/test.env
+    networks:
+      - "knests-test"
+    ports:
+      - "8001:8081"
+    environment:
+      DATABASE_URL: postgres://admin:5UPP3rSecr3tPAssword@postgres:5432/knests-test
+      JWT_SECRET: "sada*&^#(*&^^^#(*_|_&#_|_KJH#JKHG#_|_*(&#_|_*&#_|_(*&#^(*&#^_|_(*&#^_|_LKJ;o98(*SLKDJHLSKJH<M>n;loi098df904987"
+  
+  postgres:
+    environment:
+      DB_HOST: postgresql
+      POSTGRES_DB: knests-test
+    networks:
+      - "knests-test"
+    volumes:
+      - /var/lib/postgresql/data
+

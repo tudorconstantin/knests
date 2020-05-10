@@ -1,0 +1,76 @@
+version: "3.5"
+
+networks:
+  traefik-public:
+    external: true
+  knests-production:
+    external: false
+    driver: overlay
+  knests-staging:
+    external: false
+    driver: overlay
+
+services:
+  client:    
+    image: "${CI_REGISTRY:-registry.gitlab.prforge.com}/${CI_PROJECT_PATH:-tudor/knests}/client:${CI_COMMIT_SHORT_SHA:-latest}"
+    ports:
+      - "${SERVICE_PORT:-8080}"
+    volumes:
+      - ./client:/data
+      - /data/node_modules/
+      - /data/dist/
+    environment: 
+      - API_URL=server
+      - PORT=8080
+
+    networks:
+      - traefik-public
+      - "knests-${NETWORK:-staging}"
+    depends_on:
+       - server    
+    restart: unless-stopped
+    deploy:
+      update_config:
+        order: stop-first
+      labels:
+        - traefik.frontend.rule=Host:${EXTERNAL_URL:-knests-staging.prforge.com}
+        - traefik.enable=true
+        - traefik.port=${SERVICE_PORT:-8080}
+        - traefik.tags=${TRAEFIK_PUBLIC_TAG:-traefik-public}
+        - traefik.docker.network=traefik-public
+        # Traefik service that listens to HTTP
+        - traefik.redirectorservice.frontend.entryPoints=http
+        - traefik.redirectorservice.frontend.redirect.entryPoint=https
+        # Traefik service that listens to HTTPS
+        - traefik.webservice.frontend.entryPoints=https
+
+  server:
+    image: "${CI_REGISTRY:-registry.gitlab.prforge.com}/${CI_PROJECT_PATH:-tudor/knests}/server:${CI_COMMIT_SHORT_SHA:-latest}"
+    volumes:
+      - ./server:/home/node
+      - /home/node/node_modules/
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://admin:5UPP3rSecr3tPAssword@postgres:5432/knests
+      PORT: 8081
+    networks:
+      - "knests-${NETWORK:-staging}"
+    deploy:
+      update_config:
+        order: stop-first
+
+  postgres:
+    image: postgres:12.2
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 5UPP3rSecr3tPAssword
+      POSTGRES_DB: knests
+    networks:
+      - "knests-${NETWORK:-staging}"
+    volumes:
+      - knests_db:/var/lib/postgresql/data
+
+volumes:
+  knests_db:

@@ -1,0 +1,50 @@
+#error_log /dev/stdout info;
+upstream app {
+  server ${API_URL}; #value of the API_URL from docker-config.yml
+}
+
+server {
+  resolver 127.0.0.11; #docker swarm's DNS resolver
+
+  #access_log /dev/stdout;
+  listen ${NGINX_PORT};
+  charset utf-8;
+  root    /usr/share/nginx/html;
+  index   index.html index.htm;
+  
+  # serving images from /usr/share/nginx/html/images/
+  location /images/ {
+    sendfile           on;
+    sendfile_max_chunk 1m;
+  }
+
+  # Always serve index.html for any request
+  location / {
+      root /usr/share/nginx/html;
+      try_files $uri $uri.html $uri/ /index.html;
+  }
+
+  # deny access to hidden files (beginning with a period)
+  location ~ /\. {
+      access_log off; log_not_found off; deny all;
+  }
+
+  location /api {
+    proxy_pass http://app$request_uri;
+  }
+
+  location /sockjs {
+    proxy_pass http://app$request_uri;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+  }
+
+  location /graphql {
+    proxy_pass http://app$request_uri;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+  }
+
+}
