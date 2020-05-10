@@ -7,6 +7,8 @@ networks:
     external: false
   knests-staging:
     external: false
+  knests-test:
+    external: false
 
 services:
   client:

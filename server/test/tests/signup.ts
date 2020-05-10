@@ -1,5 +1,5 @@
 import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
+import supertest from 'supertest';
 import { getApp } from '../util';
 
 import { users as testUsers } from '../testData';
@@ -24,7 +24,7 @@ export const signup = () => {
 
     const userCredentials = testUsers.ADMIN[0];
 
-    return request(app.getHttpServer())
+    return supertest(app.getHttpServer())
       .post('/graphql')
       .send({
         query,
@@ -57,7 +57,7 @@ export const signup = () => {
     `;
 
     const userCredentials = testUsers.ADMIN[0];
-    const signupRes = await request(app.getHttpServer())
+    const signupRes = await supertest(app.getHttpServer())
       .post('/graphql')
       .send({
         query,

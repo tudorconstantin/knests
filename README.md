@@ -17,7 +17,8 @@ I wanted a NodeJS/Typescript based stack that would:
 * While following as much as possible the good ideas from the [NodeJS best practices](https://github.com/goldbergyoni/nodebestpractices).
 
 
-## Running the app (with docker)
+## Getting started
+* Clone this repo and `cd` into it
 
 Only needed to be run first time: 
 
@@ -26,13 +27,18 @@ $ docker network create traefik-public
 $ docker network create knests-dev
 ```
 
-### For development with docker:
-
-Clone this repo and `cd knests`.
-Run:
+```bash
 `rm -rf client/dist && docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -V --force-recreate`
+```
 
 Note: The `rm -rf client/dist` part is needed (for now, until we have a better solution) for deleting the files  nextjs generates.
 
 Go to http://localhost:8080/api/migrate to have the latest migrations applied.
 Go to http://localhost:8080/signup and create your first user.
+
+## Making it yours
+
+Search and replace `knests` with **your own project name** and you'll have a project with:
+* `/signup` page and functionality
+* `/login` page and functionality
+* `/admin/dashboard` basic page, taken from [devias.io](https://devias.io/products/material-react-dashboard)

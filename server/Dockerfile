@@ -1,5 +1,5 @@
 #FROM node:lts-buster AS build 
-FROM node:lts-alpine AS builder 
+FROM node:14.2.0-alpine3.11 AS builder 
 RUN apk add --no-cache python make g++
 
 USER node
@@ -13,7 +13,7 @@ COPY --chown=node:node package*.json /home/node/
 RUN npm install
 
 
-FROM node:lts-alpine as app
+FROM node:14.2.0-alpine3.11 as app
 USER node
 COPY --chown=node:node ./docker/entrypoint.sh /tmp/
 RUN ["chmod", "+x", "/tmp/entrypoint.sh"]

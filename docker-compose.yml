@@ -9,6 +9,9 @@ networks:
   knests-staging:
     external: false
     driver: overlay
+  knests-test:
+    external: false
+    driver: overlay
 
 services:
   client:    

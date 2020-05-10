@@ -1,6 +1,5 @@
 import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
-
+import supertest from 'supertest';
 import { users as testUsers } from '../testData';
 
 import { getApp, setToken, getToken } from '../util';
@@ -24,7 +23,7 @@ export const loginAdminUser = () => {
 
     const userCredentials = testUsers.ADMIN[0];
 
-    const loginResult = await request(app.getHttpServer())
+    const loginResult = await supertest(app.getHttpServer())
       .post('/graphql')
       .send({
         query,

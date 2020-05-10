@@ -1,14 +1,19 @@
 version: "3.5"
 
 networks:
+  knests-dev:
+    external: true
+  knests-production:
+    external: false
+  knests-staging:
+    external: false
   knests-test:
-    # external: true
-    
-    
+    external: false
+
 services:
   client:
     # command: npm run test
-    command: echo "skipping UI tests for now"
+    command: sleep 60000
     build: 
       context: ./client
       target: builder      
