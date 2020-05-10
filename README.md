@@ -9,8 +9,10 @@ $ docker network create traefik-public
 $ docker network create knests-dev
 ```
 
-### For development:
+### For development with docker:
 
+Clone this repo and `cd knests`.
+Run:
 `rm -rf client/dist && docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -V --force-recreate`
 
 Note: The `rm -rf client/dist` part is needed (for now, until we have a better solution) for deleting the files  nextjs generates.
