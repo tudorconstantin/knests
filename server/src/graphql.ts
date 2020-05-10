@@ -12,24 +12,19 @@ export enum UserRoles {
     PARENT = "PARENT"
 }
 
-export class UserAddInput {
-    email: string;
-    roles: UserRoles[];
-}
-
 export class UserLoginInput {
     email: string;
     password: string;
 }
 
+export class UserAddInput {
+    email: string;
+    roles: UserRoles[];
+}
+
 export class UserSignupInput {
     email: string;
     password: string;
-}
-
-export class AuthPayload {
-    token?: string;
-    user?: User;
 }
 
 export abstract class IMutation {
@@ -40,14 +35,19 @@ export abstract class IMutation {
     abstract addUser(user?: UserAddInput): User | Promise<User>;
 }
 
-export abstract class IQuery {
-    abstract user(userId: string): User | Promise<User>;
-}
-
 export class User {
     email: string;
     roles: UserRoles[];
     status: string;
     createdAt?: string;
     updatedAt?: string;
+}
+
+export class AuthPayload {
+    token?: string;
+    user?: User;
+}
+
+export abstract class IQuery {
+    abstract user(userId: string): User | Promise<User>;
 }

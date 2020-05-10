@@ -9,7 +9,7 @@ export class KnexConfig {
       debug: true,
       connection: process.env.DATABASE_URL,
 
-      pool: { min: 1, max: 7 },
+      pool: { min: 2, max: 7 },
     };
   }
 }

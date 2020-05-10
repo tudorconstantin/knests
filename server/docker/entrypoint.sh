@@ -8,4 +8,6 @@ for i in $(seq 1 30); do
 
 done
 cd ../
+
+echo "executing command: |$@|";
 exec "$@";

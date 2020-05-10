@@ -40,7 +40,7 @@ services:
   
   postgres:
     environment:
-      DB_HOST: postgresql
+      # DB_HOST: postgresql
       POSTGRES_DB: knests-dev
       POSTGRES_USER: admin-dev
       POSTGRES_PASSWORD: 5UPP3rSecr3tPAssword

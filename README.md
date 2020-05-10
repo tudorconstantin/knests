@@ -36,7 +36,7 @@ Note: The `rm -rf client/dist` part is needed (for now, until we have a better s
 Go to http://localhost:8080/api/migrate to have the latest migrations applied.
 Go to http://localhost:8080/signup and create your first user.
 
-## Making it yours
+## Make it yours
 
 Search and replace `knests` with **your own project name** and you'll have a project with:
 * `/signup` page and functionality

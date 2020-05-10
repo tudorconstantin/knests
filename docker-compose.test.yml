@@ -22,10 +22,10 @@ services:
 
 
   server:
-    command: npm run test:e2e
+    command: "npm run test:e2e"
 
     build: 
-      context: ./server      
+      context: ./server
       target: app
     restart: "no"
     env_file:
@@ -39,9 +39,12 @@ services:
       JWT_SECRET: "sada*&^#(*&^^^#(*_|_&#_|_KJH#JKHG#_|_*(&#_|_*&#_|_(*&#^(*&#^_|_(*&#^_|_LKJ;o98(*SLKDJHLSKJH<M>n;loi098df904987"
   
   postgres:
+    ports:
+      - "54320:5432"
     environment:
-      DB_HOST: postgresql
       POSTGRES_DB: knests-test
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 5UPP3rSecr3tPAssword
     networks:
       - "knests-test"
     volumes:
