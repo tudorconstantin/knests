@@ -6,7 +6,7 @@ const API_URL = 'http://server:8081';
 
 const devProxy = {
   '/api': {
-    target: `${API_URL}/api`,
+    target: `${API_URL}`,
     // pathRewrite: { '^/api': '/' },
     // changeOrigin: true,
   },
