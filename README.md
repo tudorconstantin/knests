@@ -1,4 +1,21 @@
 # The KNESTS Stack
+* [KNEx.js](http://knexjs.org/)
+* [NEST.js](https://nestjs.com/)
+* [NExT.js](https://nextjs.org/)
+* [TS](https://www.typescriptlang.org/)
+
+* [GraphQL](https://graphql.org/)
+* [Docker](https://www.docker.com/)
+
+The above libraries and frameworks are the best ones (in my opinion, of course) regarding my desires at the moment of starting this project. 
+
+It's just a simple (albeit huge) coincidence that 3 of them sound NEX-ish. It would've been a shame not to name the stack similarly.
+
+I wanted a NodeJS/Typescript based stack that would:
+* Help me develop web apps as fast as possible
+* With the cool javascript technologies of the moment (the "moment" is 2020 - most probably a small part of 2020): Typescript, React with typescript and hooks, GraphQL, Material-UI.
+* While following as much as possible the good ideas from the [NodeJS best practices](https://github.com/goldbergyoni/nodebestpractices).
+
 
 ## Running the app (with docker)
 
