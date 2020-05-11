@@ -29,7 +29,7 @@
     "@nestjs/platform-express": "7.0.9",
     "@nestjsplus/config": "1.0.14",
     "@nestjsplus/knex": "1.0.0",
-    "apollo-server-express": "2.13.0",
+    "apollo-server-express": "2.13.1",
     "bcrypt": "4.0.1",
     "class-transformer": "0.2.3",
     "graphql": "15.0.0",
