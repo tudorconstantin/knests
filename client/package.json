@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
     "@apollo/client": "3.0.0-james.33.0",
@@ -31,11 +33,13 @@
     "react-perfect-scrollbar": "1.5.8",
     "subscriptions-transport-ws": "0.9.16",
     "typescript": "3.8.3",
-    "validate.js": "0.13.1"
+    "validate.js": "0.13.1",
+    "snyk": "^1.319.2"
   },
   "devDependencies": {
     "@types/supertest": "2.0.9",
     "express": "4.17.1",
     "nodemon": "2.0.3"
-  }
+  },
+  "snyk": true
 }
