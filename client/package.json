@@ -34,7 +34,7 @@
     "subscriptions-transport-ws": "0.9.16",
     "typescript": "3.8.3",
     "validate.js": "0.13.1",
-    "snyk": "^1.319.2"
+    "snyk": "1.319.2"
   },
   "devDependencies": {
     "@types/supertest": "2.0.9",
