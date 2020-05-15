@@ -231,7 +231,7 @@ const SignUp = (props) => {
             <div className={classes.contentBody}>
               <form className={classes.form} onSubmit={handleSignUp}>
                 <Typography className={classes.title} variant="h2">
-                  Creeaza cont
+                  Sign up
                 </Typography>
                 <Typography
                   align="center"
@@ -239,9 +239,9 @@ const SignUp = (props) => {
                   color="textSecondary"
                   variant="body1"
                 >
-                  Sau logheaza-te cu
+                  Or log in with
                   <Link href="/login">
-                    <a>adresa de email</a>
+                    <a>email</a>
                   </Link>
                 </Typography>
                 <TextField
@@ -298,7 +298,7 @@ const SignUp = (props) => {
                   type="submit"
                   variant="contained"
                 >
-                  Creeaza contul!
+                  Sign up!
                 </Button>
                 {/* <Typography color="textSecondary" variant="body1">
                   Don't have an account?{" "}

@@ -17,14 +17,14 @@ import { useRouter } from "next/router";
 
 const schema = {
   email: {
-    presence: { allowEmpty: false, message: "camp obligatoriu" },
+    presence: { allowEmpty: false, message: "required field" },
     email: true,
     length: {
       maximum: 64,
     },
   },
   password: {
-    presence: { allowEmpty: false, message: "camp obligatoriu" },
+    presence: { allowEmpty: false, message: "required field" },
     length: {
       maximum: 128,
     },
@@ -238,7 +238,7 @@ const SignIn = (props) => {
             <div className={classes.contentBody}>
               <form className={classes.form} onSubmit={handleSignIn}>
                 <Typography className={classes.title} variant="h2">
-                  Autentifica-te cu emailul
+                  Login with email
                 </Typography>
                 {/* <Typography color="textSecondary" gutterBottom>
                   Sign in with social media
@@ -306,7 +306,7 @@ const SignIn = (props) => {
                   type="submit"
                   variant="contained"
                 >
-                  Autentificare!
+                  Log in!
                 </Button>
                 {/* <Typography color="textSecondary" variant="body1">
                   Don't have an account?{" "}
