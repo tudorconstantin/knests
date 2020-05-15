@@ -65,7 +65,7 @@ services:
         order: stop-first
 
   postgres:
-    image: postgres:12.2
+    image: postgres:12.3
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 5UPP3rSecr3tPAssword
