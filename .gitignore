@@ -11,6 +11,12 @@ package-lock.json
 /tests/e2e/videos/
 /tests/e2e/screenshots/
 
+#ignore lock files. We have pinned versions in package.json which are updated by the renovate bot
+client/package-lock.json
+client/yarn.lock
+server/package-lock.json
+server/yarn.lock
+
 # local env files
 .env.local
 .env.*.local
