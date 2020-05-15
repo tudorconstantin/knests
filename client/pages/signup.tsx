@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { gql, useMutation } from "@apollo/client";
 import Link from "next/link";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import validate from "validate.js";
 import { makeStyles } from "@material-ui/styles";
@@ -155,13 +155,12 @@ const SignUp = (props) => {
   };
 
   const router = useRouter();
-  const [doSignup, {data, loading, error}] = useMutation(SIGNUP);
-  if (data && !error){
+  const [doSignup, { data, loading, error }] = useMutation(SIGNUP);
+  if (data && !error) {
     router.push("/login");
   }
 
   const [formState, setFormState] = useState(typedFormState);
-  
 
   useEffect(() => {
     const errors = validate(formState.values, schema);
@@ -194,12 +193,12 @@ const SignUp = (props) => {
 
   const handleSignUp = (event) => {
     event.preventDefault();
-    const {repeatPassword, ...credentials} = formState.values;
+    const { repeatPassword, ...credentials } = formState.values;
     doSignup({
       variables: {
-        credentials
-      }
-    })
+        credentials,
+      },
+    });
   };
 
   const hasError = (field) =>
@@ -230,7 +229,11 @@ const SignUp = (props) => {
           <div className={classes.content}>
             <div className={classes.contentBody}>
               <form className={classes.form} onSubmit={handleSignUp}>
-                <Typography className={classes.title} variant="h2">
+                <Typography
+                  className={classes.title}
+                  variant="h2"
+                  align="center"
+                >
                   Sign up
                 </Typography>
                 <Typography
@@ -238,10 +241,9 @@ const SignUp = (props) => {
                   className={classes.sugestion}
                   color="textSecondary"
                   variant="body1"
-                >
-                  Or log in with
+                > Or log in with
                   <Link href="/login">
-                    <a>email</a>
+                    <a> email</a>
                   </Link>
                 </Typography>
                 <TextField
@@ -252,7 +254,7 @@ const SignUp = (props) => {
                     ""
                     // hasError("email") ? formState.errors.email[0] : null
                   }
-                  label="Adresa email"
+                  label="Adresa"
                   name="email"
                   onChange={handleChange}
                   type="text"
@@ -267,7 +269,7 @@ const SignUp = (props) => {
                     ""
                     // hasError("password") ? formState.errors.password[0] : null
                   }
-                  label="Parola"
+                  label="Password"
                   name="password"
                   onChange={handleChange}
                   type="password"
@@ -282,7 +284,7 @@ const SignUp = (props) => {
                     ""
                     // hasError("password") ? formState.errors.password[0] : null
                   }
-                  label="Repeta parola"
+                  label="Repeat password"
                   name="repeatPassword"
                   onChange={handleChange}
                   type="password"

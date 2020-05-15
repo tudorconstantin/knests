@@ -275,7 +275,7 @@ const SignIn = (props) => {
                     ""
                     // hasError("email") ? formState.errors.email[0] : null
                   }
-                  label="Adresa email"
+                  label="Email"
                   name="email"
                   onChange={handleChange}
                   type="text"
@@ -290,7 +290,7 @@ const SignIn = (props) => {
                     ""
                     // hasError("password") ? formState.errors.password[0] : null
                   }
-                  label="Parola"
+                  label="Password"
                   name="password"
                   onChange={handleChange}
                   type="password"
