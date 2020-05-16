@@ -3,16 +3,12 @@ export const users = {
     email: 'tudorconstantin+gg.admin@gmail.com',
     password: 'secret',
   }],
-  "PRINCIPAL": [{
-    email: 'tudorconstantin+gg.principal@gmail.com',
+  "NORMAL": [{
+    email: 'tudorconstantin+normalprincipal@gmail.com',
     password: 'secret',
   }],
-  "TEACHER": [{
-    email: 'tudorconstantin+gg.teacher@gmail.com',
+  "AONYMOUS": [{
+    email: 'tudorconstantin+anonymous@gmail.com',
     password: 'secret',
-  }],
-  "PARENT": [{
-    email: 'tudorconstantin+gg.parent@gmail.com',
-    password: 'secret',
-  }]
+  }],  
 }

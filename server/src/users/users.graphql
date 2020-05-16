@@ -8,8 +8,8 @@ type User {
 
 enum UserRoles {
   ADMIN
-  TEACHER
-  PARENT
+  NORMAL
+  ANONYMOUS
 }
 
 type AuthPayload {

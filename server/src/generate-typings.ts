@@ -13,4 +13,4 @@ import { join } from 'path';
   } catch(e){
     console.trace(`Error:`, e);
   }
-})();
+})().then( () => console.log(`done`));
