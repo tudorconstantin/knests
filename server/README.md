@@ -17,7 +17,7 @@ $ export DATABASE_URL=postgres://admin:5UPP3rSecr3tPAssword@localhost:54320/knes
 ```
 
 Also, there's an API endpoint that runs the migrations once the app is started:
-`GET http://localhost:8000/system/migrate`
+`GET http://localhost:8000/api/migrate`
 
 ```bash
 # development

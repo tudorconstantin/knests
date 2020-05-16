@@ -45,3 +45,7 @@ Search and replace `knests` with **your own project name** and you'll have a pro
 * `/signup` page and functionality
 * `/login` page and functionality
 * `/admin/dashboard` basic page, taken from [devias.io](https://devias.io/products/material-react-dashboard)
+
+### Documentation
+
+There is some [frontend](/knests/tree/master/client) / [backend](https://github.com/tudorconstantin/knests/tree/master/server) documentation written so you can debug things more thoroughly when they don't go as expected.
