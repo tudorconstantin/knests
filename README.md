@@ -48,4 +48,4 @@ Search and replace `knests` with **your own project name** and you'll have a pro
 
 ### Documentation
 
-There is some [frontend](/knests/tree/master/client) / [backend](https://github.com/tudorconstantin/knests/tree/master/server) documentation written so you can debug things more thoroughly when they don't go as expected.
+There is some [frontend](/tree/master/client) / [backend](https://github.com/tudorconstantin/knests/tree/master/server) documentation written so you can debug things more thoroughly when they don't go as expected.
