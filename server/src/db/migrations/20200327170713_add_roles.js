@@ -26,12 +26,12 @@ exports.up = async function (knex) {
                     'name': 'Administrator',
                 },
                 {
-                    'code': 'TEACHER',
-                    'name': 'Teacher',
+                    'code': 'NORMAL',
+                    'name': 'Regular',
                 },
                 {
-                    'code': 'PARENT',
-                    'name': 'Parent',
+                    'code': 'ANONYMOUS',
+                    'name': 'Anonymous',
                 },
             ],
         );

@@ -8,8 +8,8 @@
 /* eslint-disable */
 export enum UserRoles {
     ADMIN = "ADMIN",
-    TEACHER = "TEACHER",
-    PARENT = "PARENT"
+    NORMAL = "NORMAL",
+    ANONYMOUS = "ANONYMOUS"
 }
 
 export class UserLoginInput {

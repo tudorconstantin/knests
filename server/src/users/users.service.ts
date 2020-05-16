@@ -9,8 +9,8 @@ import { UserDTO } from './dto/user.dto';
 
 interface DBRoles {
     [UserRoles.ADMIN]: string;
-    [UserRoles.TEACHER]: string;
-    [UserRoles.PARENT]: string;
+    [UserRoles.NORMAL]: string;
+    [UserRoles.ANONYMOUS]: string;
 }
 @Injectable()
 export class UsersService {
