@@ -38,7 +38,7 @@
   "devDependencies": {
     "@types/supertest": "2.0.9",
     "express": "4.17.1",
-    "link-module-alias": "^1.2.0",
+    "link-module-alias": "1.2.0",
     "nodemon": "2.0.4"
   },
   "engines": {
