@@ -84,6 +84,6 @@ export default {
     fontWeight: 500,
     letterSpacing: '0.33px',
     lineHeight: '13px',
-    textTransform: 'uppercase'
+    // textTransform: 'uppercase' // Errors with: Type 'string' is not assignable to type 'TextTransformProperty'.
   }
 };

@@ -14,7 +14,9 @@ import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 import { Profile, SidebarNav, UpgradePlan } from './components';
 
-const useStyles = makeStyles(theme => ({
+import CustomTheme from "~theme";
+
+const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   drawer: {
     width: 240,
     [theme.breakpoints.up('lg')]: {
@@ -23,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   root: {
-    backgroundColor: theme.palette.white,
+    backgroundColor: theme.palette.common.white,
     display: 'flex',
     flexDirection: 'column',
     height: '100%',

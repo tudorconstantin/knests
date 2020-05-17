@@ -12,6 +12,8 @@ import {
   Typography,
 } from "@material-ui/core";
 
+import CustomTheme from "~theme";
+
 import { gql, useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 
@@ -31,7 +33,7 @@ const schema = {
   },
 };
 
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {
     backgroundColor: theme.palette.background.default,
     height: "100%",
@@ -45,7 +47,7 @@ const useStyles = makeStyles((theme: any) => ({
     },
   },
   quote: {
-    backgroundColor: theme.palette.neutral,
+    backgroundColor: theme.palette.background.default,
     height: "100%",
     display: "flex",
     justifyContent: "center",
@@ -60,15 +62,15 @@ const useStyles = makeStyles((theme: any) => ({
     flexBasis: "600px",
   },
   quoteText: {
-    color: theme.palette.white,
+    color: theme.palette.common.white,
     fontWeight: 300,
   },
   name: {
     marginTop: theme.spacing(3),
-    color: theme.palette.white,
+    color: theme.palette.common.white,
   },
   bio: {
-    color: theme.palette.white,
+    color: theme.palette.common.white,
   },
   contentContainer: {},
   content: {

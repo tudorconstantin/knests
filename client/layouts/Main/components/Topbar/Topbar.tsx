@@ -9,7 +9,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
 
-const useStyles = makeStyles(theme => ({
+import CustomTheme from '../../../../theme';
+
+const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {
     boxShadow: 'none'
   },
