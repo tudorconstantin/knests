@@ -7,7 +7,9 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { List, ListItem, Button, colors } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
+import CustomTheme from "~theme";
+
+const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {},
   item: {
     display: 'flex',
@@ -24,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: theme.typography.fontWeightMedium
   },
   icon: {
-    color: theme.palette.icon,
+    color: theme.palette.primary.main,
     width: 24,
     height: 24,
     display: 'flex',
@@ -60,7 +62,7 @@ const SidebarNav = props => {
             <Button
               // activeClassName={classes.active}
               className={classes.button}
-              to={page.href}
+              // to={page.href}
             >
               <div className={classes.icon}>{page.icon}</div>
               {page.title}

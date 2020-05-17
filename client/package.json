@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start"
+    "dev": "link-module-alias && next dev",
+    "build": "link-module-alias && next build && next export",
+    "start": "link-module-alias && next start",
+    "postinstall": "link-module-alias",
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true"
   },
   "dependencies": {
     "@apollo/client": "3.0.0-james.33.0",
@@ -36,9 +38,17 @@
   "devDependencies": {
     "@types/supertest": "2.0.9",
     "express": "4.17.1",
+    "link-module-alias": "^1.2.0",
     "nodemon": "2.0.4"
   },
   "engines": {
     "node": ">=14.2.0"
+  },
+  "_moduleAliases": {
+    "~root"      : ".",
+    "~components": "./components",
+    "~theme": "./theme",
+    "~layouts": "./layouts",
+    "~common": "./common"
   }
 }

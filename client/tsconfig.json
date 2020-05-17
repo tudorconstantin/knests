@@ -25,5 +25,12 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ]
+  ],
+  "paths": {
+    "~root/*"      : ["./*"],
+    "~components/*": ["./components/*"],
+    "~theme/*": ["./theme/*"],
+    "~layouts/*": ["./layouts/*"],
+    "~common/*": ["./common/*"]
+  }
 }

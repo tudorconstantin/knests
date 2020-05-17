@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Typography, Button, colors } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
+import CustomTheme from "~theme";
+
+const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {
     backgroundColor: colors.grey[50]
   },

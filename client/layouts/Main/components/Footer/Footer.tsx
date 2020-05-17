@@ -4,7 +4,9 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import { Typography, Link } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
+import CustomTheme from "~theme";
+
+const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {
     padding: theme.spacing(4)
   }

@@ -14,7 +14,9 @@ import {
   LatestOrders,
 } from "../../components";
 
-const useStyles = makeStyles((theme: any) => ({
+import CustomTheme from "~theme";
+
+const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {
     padding: theme.spacing(4),
   },

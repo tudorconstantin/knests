@@ -24,7 +24,7 @@ const Topbar = props => {
       position="fixed"
     >
       <Toolbar>
-        <Link to="/">
+        <Link href="/">
           <img
             alt="Logo"
             src="/images/logos/logo--white.svg"
