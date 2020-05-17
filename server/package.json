@@ -65,6 +65,9 @@
     "tslint-config-prettier": "1.18.0",
     "typescript": "3.9.2"
   },
+  "engines": {
+    "node": ">=14.3.0"
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
