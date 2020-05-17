@@ -41,21 +41,23 @@ export class UsersService {
     }
 
     /**
-     * We only allow the signup for the first user, which will be an admin automatically.
+     * The first user signing up will also have the ADMIN role. The rest of them, only the NORMAL role.
      * @param user :UserSignupDTO
      */
     async signup(user: UserSignupDTO): Promise<UserDTO | undefined> {
 
         try {
             const [total] = await this.knex('users').count();
-            if (total.count > 0) {
-                throw new HttpException('Signup disabled', HttpStatus.FORBIDDEN);
+            const signupRoles = [UserRoles.NORMAL];
+
+            if (parseInt(total.count, 10) === 0) {
+                signupRoles.push(UserRoles.ADMIN);
             }
             const newUser = await this.create(new UserDTO(classToPlain(user)));
 
 
             // adding Roles
-            const adminUser = await this.addRolesToUser(newUser, [UserRoles.ADMIN]);
+            const adminUser = await this.addRolesToUser(newUser, signupRoles);
 
             const res = new UserDTO(classToPlain(adminUser));
 

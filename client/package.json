@@ -37,5 +37,8 @@
     "@types/supertest": "2.0.9",
     "express": "4.17.1",
     "nodemon": "2.0.4"
+  },
+  "engines": {
+    "node": ">=14.2.0"
   }
 }
