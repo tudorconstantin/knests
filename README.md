@@ -1,6 +1,3 @@
-# WARN
-Please beware that in order to use it for your projects right now you'd have to be quite comfortable with the nodejs ecosystem because the whole stack is not quite tidied up.
-
 # The KNESTS Stack
 * [KNEx.js](http://knexjs.org/)
 * [NEST.js](https://nestjs.com/)
