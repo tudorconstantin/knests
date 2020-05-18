@@ -16,6 +16,9 @@ I wanted a NodeJS/Typescript based stack that would:
 * With the cool javascript technologies of the moment (the "moment" is 2020 - most probably a small part of 2020): Typescript, React with typescript and hooks, GraphQL, Material-UI.
 * While following as much as possible the good ideas from the [NodeJS best practices](https://github.com/goldbergyoni/nodebestpractices).
 
+## About
+
+If interested, I wrote about the [whys and the objectives of the Knests Stack on my blog.](https://programming.tudorconstantin.com/2020/05/the-knests-stack.html)
 
 ## Getting started
 * Clone this repo and `cd` into it
