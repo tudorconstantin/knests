@@ -18,7 +18,7 @@ I wanted a NodeJS/Typescript based stack that would:
 
 ## About
 
-If interested, I wrote about the [whys and the objectives of the Knests Stack on my blog.](https://programming.tudorconstantin.com/2020/05/the-knests-stack.html)
+If interested, read about the [whys and the objectives of the Knests Stack on my blog.](https://programming.tudorconstantin.com/2020/05/the-knests-stack.html)
 
 ## Getting started
 * Clone this repo and `cd` into it
