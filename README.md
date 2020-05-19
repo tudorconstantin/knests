@@ -20,6 +20,15 @@ I wanted a NodeJS/Typescript based stack that would:
 
 If interested, read about the [whys and the objectives of the Knests Stack on my blog.](https://programming.tudorconstantin.com/2020/05/the-knests-stack.html)
 
+## How it looks
+
+It contains the [free admin dashboard theme from devias.io](https://react-material-dashboard.devias.io/dashboard).
+
+![Login](/client/public/screenshots/login.png?raw=true "Simple Login with Email" )
+![Signup](/client/public/screenshots/signup.png?raw=true "Signup Form")
+![Dashboard Big](/client/public/screenshots/dashboard_big.png?raw=true "Big Dashboard")
+![Responsive Dashboard](/client/public/screenshots/dashboard_small.png?raw=true "Responsive Dashboard")
+
 ## Getting started
 * Clone this repo and `cd` into it
 
