@@ -17,7 +17,9 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --collectCoverage --config ./test/jest-e2e.json"
+    "test:e2e": "jest --collectCoverage --config ./test/jest-e2e.json",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@nestjs/common": "7.0.13",
@@ -42,7 +44,8 @@
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "rxjs": "6.5.5",
-    "type-graphql": "0.17.6"
+    "type-graphql": "0.17.6",
+    "snyk": "^1.323.2"
   },
   "devDependencies": {
     "@nestjs/cli": "7.1.5",
@@ -81,5 +84,6 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "snyk": true
 }
