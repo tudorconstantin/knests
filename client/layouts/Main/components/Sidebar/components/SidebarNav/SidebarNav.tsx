@@ -1,20 +1,20 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/display-name */
 import React from 'react';
-import Link from "next/link";
+import Link from 'next/link';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { List, ListItem, Button, colors } from '@material-ui/core';
 
-import CustomTheme from "~theme";
+import CustomTheme from '~theme';
 
 const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {},
   item: {
     display: 'flex',
     paddingTop: 0,
-    paddingBottom: 0
+    paddingBottom: 0,
   },
   button: {
     color: colors.blueGrey[800],
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: typeof CustomTheme) => ({
     textTransform: 'none',
     letterSpacing: 0,
     width: '100%',
-    fontWeight: theme.typography.fontWeightMedium
+    fontWeight: theme.typography.fontWeightMedium,
   },
   icon: {
     color: theme.palette.primary.main,
@@ -31,33 +31,26 @@ const useStyles = makeStyles((theme: typeof CustomTheme) => ({
     height: 24,
     display: 'flex',
     alignItems: 'center',
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   active: {
     color: theme.palette.primary.main,
     fontWeight: theme.typography.fontWeightMedium,
     '& $icon': {
-      color: theme.palette.primary.main
-    }
-  }
+      color: theme.palette.primary.main,
+    },
+  },
 }));
 
-const SidebarNav = props => {
+const SidebarNav = (props) => {
   const { pages, className, ...rest } = props;
 
   const classes = useStyles();
 
   return (
-    <List
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
-      {pages.map(page => (
-        <ListItem
-          className={classes.item}
-          disableGutters
-          key={page.title}
-        >
+    <List {...rest} className={clsx(classes.root, className)}>
+      {pages.map((page) => (
+        <ListItem className={classes.item} disableGutters key={page.title}>
           <Link href={page.href}>
             <Button
               // activeClassName={classes.active}
@@ -76,7 +69,7 @@ const SidebarNav = props => {
 
 SidebarNav.propTypes = {
   className: PropTypes.string,
-  pages: PropTypes.array.isRequired
+  pages: PropTypes.array.isRequired,
 };
 
 export default SidebarNav;
