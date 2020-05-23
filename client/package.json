@@ -40,8 +40,8 @@
     "express": "4.17.1",
     "link-module-alias": "1.2.0",
     "nodemon": "2.0.4",
-    "tslint": "^6.1.2",
-    "tslint-config-prettier": "^1.18.0"
+    "tslint": "6.1.2",
+    "tslint-config-prettier": "1.18.0"
   },
   "engines": {
     "node": ">=14.2.0"
