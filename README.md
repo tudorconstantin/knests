@@ -82,3 +82,16 @@ Here are some commands that clear all kind of caches:
 ### Documentation
 
 There is some [frontend](https://github.com/tudorconstantin/knests/tree/master/client) / [backend](https://github.com/tudorconstantin/knests/tree/master/server) documentation written so you can debug things more thoroughly when they don't go as expected.
+
+## Road map
+[] Fullstack e2e testing using Playwright and code coverage generating for both UI and server..
+[] Since this is hosted on Github, migrate the Gitlab CI/CD pipeline to Github actions and dockerhub registry.
+[] Deployment and hosting on Kubernetes (?)
+[] Internationalization (?)
+[] Other good ideas
+  
+## Wanna Help?
+- Pick any task from the road map, develop it, document it and submit a Pull Request
+- Clone the repo, build something, see how it goes, come up with ideas on how to improve the overall development experience.
+- Review the code, send suggestions, fixes, etc.
+- Star the repo, share the articles, write yourself about it :)
