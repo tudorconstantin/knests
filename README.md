@@ -84,7 +84,8 @@ Here are some commands that clear all kind of caches:
 There is some [frontend](https://github.com/tudorconstantin/knests/tree/master/client) / [backend](https://github.com/tudorconstantin/knests/tree/master/server) documentation written so you can debug things more thoroughly when they don't go as expected.
 
 ## Road map
-[] Fullstack e2e testing using Playwright and code coverage generating for both UI and server..
+[] Fullstack e2e testing using Playwright and code coverage generating for both UI and server.
+[] Create tutorials documenting the development flow using the Knests stack.
 [] Since this is hosted on Github, migrate the Gitlab CI/CD pipeline to Github actions and dockerhub registry.
 [] Deployment and hosting on Kubernetes (?)
 [] Internationalization (?)
