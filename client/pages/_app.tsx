@@ -1,22 +1,22 @@
-import { AppProps } from "next/app";
-import React, { Component } from "react";
-import { useRouter } from "next/router";
+import { AppProps } from 'next/app';
+import React, { Component } from 'react';
+import { useRouter } from 'next/router';
 
 // import Chart from 'react-chartjs-2';
-import { ThemeProvider } from "@material-ui/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider } from '@material-ui/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-import validate from "validate.js";
+import validate from 'validate.js';
 
-import { chartjs } from "../helpers";
-import theme from "../theme";
+import { chartjs } from '../helpers';
+import theme from '../theme';
 
-import validators from "../common/validators";
+import validators from '../common/validators';
 
-import { ApolloProvider } from "@apollo/client";
-import withApollo from "../helpers/configureGraphQL";
+import { ApolloProvider } from '@apollo/client';
+import withApollo from '../helpers/configureGraphQL';
 
-import * as jwtDecode from "jwt-decode";
+import * as jwtDecode from 'jwt-decode';
 
 // Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
 //   draw: chartjs.draw
@@ -29,19 +29,18 @@ validate.validators = {
 
 function canVisit(path): boolean {
   const whitelistedPaths = [
-    new RegExp("^/login", "i"),
-    new RegExp("^/signup", "i"),
+    new RegExp('^/login', 'i'),
+    new RegExp('^/signup', 'i'),
   ];
-  for (const allow of whitelistedPaths){
+  for (const allow of whitelistedPaths) {
     if (allow.test(path)) return true;
   }
 
-  const token = localStorage.getItem("token");
-  if (!(token && token.length)){
+  const token = localStorage.getItem('token');
+  if (!(token && token.length)) {
     return false;
-  };
+  }
   const decodedToken = jwtDecode(token);
-  
 
   return true;
 }
@@ -51,7 +50,7 @@ function MyApp(props) {
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector("#jss-server-side");
+    const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement!.removeChild(jssStyles);
     }
@@ -60,7 +59,7 @@ function MyApp(props) {
   if (process.browser) {
     const router = useRouter();
     if (!canVisit(router.pathname)) {
-      router.push("/login");
+      router.push('/login');
     }
   }
 
