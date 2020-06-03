@@ -1,18 +1,5 @@
 version: "3.5"
 
-networks:
-  traefik-public:
-    external: true
-  knests-production:
-    external: false
-    driver: overlay
-  knests-staging:
-    external: false
-    driver: overlay
-  knests-test:
-    external: false
-    driver: overlay
-
 services:
   client:    
     image: "${CI_REGISTRY:-registry.gitlab.prforge.com}/${CI_PROJECT_PATH:-tudor/knests}/client:${CI_COMMIT_SHORT_SHA:-latest}"
@@ -26,9 +13,6 @@ services:
       - API_URL=server
       - PORT=8080
 
-    networks:
-      - traefik-public
-      - "knests-${NETWORK:-staging}"
     depends_on:
        - server    
     restart: unless-stopped
@@ -58,22 +42,11 @@ services:
     environment:
       DATABASE_URL: postgres://admin:5UPP3rSecr3tPAssword@postgres:5432/knests
       PORT: 8081
-    networks:
-      - "knests-${NETWORK:-staging}"
     deploy:
       update_config:
         order: stop-first
 
   postgres:
     image: postgres:12.3
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: 5UPP3rSecr3tPAssword
-      POSTGRES_DB: knests
-    networks:
-      - "knests-${NETWORK:-staging}"
-    volumes:
-      - knests_db:/var/lib/postgresql/data
+    
 
-volumes:
-  knests_db:

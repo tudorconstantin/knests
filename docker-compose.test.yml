@@ -1,12 +1,6 @@
 version: "3.5"
 
 networks:
-  knests-dev:
-    external: true
-  knests-production:
-    external: false
-  knests-staging:
-    external: false
   knests-test:
     external: false
 

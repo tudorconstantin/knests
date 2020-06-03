@@ -1,7 +1,17 @@
 version: "3.5"
 
+networks: 
+  traefik-public:
+    external: true
+  knests-production:
+    external: false
+    driver: overlay
+  
 services:
   client:
+    networks:
+      - traefik-public
+      - knests-production
     deploy:
       restart_policy:
         condition: on-failure
@@ -11,8 +21,23 @@ services:
     command: nginx -g "daemon off;"
 
   server:
+    networks:
+      - knests-production
     env_file:
       - ./server/docker/production.env
     environment:
       NODE_ENV: production
+      DATABASE_URL: postgres://admin:5UPP3rSecr3tPAssword@postgres:5432/knests
+      JWT_SECRET: "sada23123234*&^#(*&^^^#(*_|_&#_|_KJH#JKHG#_|_*(&#_|_*&#_|_(*&#^(*&#^_|_(*&#^_|_LKJ;o98(*SLKDJHLSKJH<M>n;loi098df904987"
+
     command: "npm start"
+
+  postgres:
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 5UPP3rSecr3tPAssword
+      POSTGRES_DB: knests
+    volumes:
+      - knests_db_production:/var/lib/postgresql/data
+volumes:
+  knests_db_production:

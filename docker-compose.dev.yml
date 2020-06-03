@@ -3,12 +3,6 @@ version: "3.5"
 networks:
   knests-dev:
     external: true
-  knests-production:
-    external: false
-  knests-staging:
-    external: false
-  knests-test:
-    external: false
 
 services:
   client:
@@ -20,6 +14,8 @@ services:
         - SERVER_URL=localhost:8080
     ports:
       - "8080:8080"
+    networks:
+      - "knests-dev"
 
 
   server:
