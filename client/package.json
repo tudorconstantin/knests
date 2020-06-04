@@ -32,7 +32,7 @@
     "react-dom": "16.13.1",
     "react-perfect-scrollbar": "1.5.8",
     "subscriptions-transport-ws": "0.9.16",
-    "typescript": "3.9.3",
+    "typescript": "3.9.5",
     "validate.js": "0.13.1"
   },
   "devDependencies": {
