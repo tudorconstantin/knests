@@ -63,7 +63,7 @@
     "tsconfig-paths": "3.9.0",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
-    "typescript": "3.9.3"
+    "typescript": "3.9.5"
   },
   "engines": {
     "node": "14.4.0"
