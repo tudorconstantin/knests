@@ -33,7 +33,7 @@
     "bcrypt": "4.0.1",
     "class-transformer": "0.2.3",
     "graphql": "15.0.0",
-    "graphql-tools": "6.0.7",
+    "graphql-tools": "6.0.8",
     "knex-migrate": "1.7.4",
     "passport": "0.4.1",
     "passport-jwt": "4.0.0",
