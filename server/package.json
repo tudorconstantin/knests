@@ -30,7 +30,7 @@
     "@nestjsplus/config": "1.0.14",
     "@nestjsplus/knex": "1.0.0",
     "apollo-server-express": "2.14.2",
-    "bcrypt": "4.0.1",
+    "bcrypt": "5.0.0",
     "class-transformer": "0.2.3",
     "graphql": "15.1.0",
     "graphql-tools": "6.0.8",
