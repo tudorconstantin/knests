@@ -36,7 +36,7 @@
     "validate.js": "0.13.1"
   },
   "devDependencies": {
-    "@types/supertest": "2.0.9",
+    "@types/supertest": "2.0.10",
     "express": "4.17.1",
     "link-module-alias": "1.2.0",
     "nodemon": "2.0.4",
