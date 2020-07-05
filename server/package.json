@@ -32,7 +32,7 @@
     "apollo-server-express": "2.15.1",
     "bcrypt": "5.0.0",
     "class-transformer": "0.2.3",
-    "graphql": "15.2.0",
+    "graphql": "15.3.0",
     "graphql-tools": "6.0.12",
     "knex-migrate": "1.7.4",
     "passport": "0.4.1",
