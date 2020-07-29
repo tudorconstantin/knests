@@ -31,7 +31,7 @@
     "@nestjsplus/knex": "1.0.0",
     "apollo-server-express": "2.16.1",
     "bcrypt": "5.0.0",
-    "class-transformer": "0.2.3",
+    "class-transformer": "0.3.1",
     "graphql": "15.3.0",
     "graphql-tools": "6.0.15",
     "knex-migrate": "1.7.4",
