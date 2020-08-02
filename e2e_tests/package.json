@@ -1,0 +1,20 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "link-module-alias && next dev",
+    "build": "link-module-alias && next build && next export",
+    "start": "link-module-alias && next start",
+    "postinstall": "link-module-alias",
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+
+  },
+  "engines": {
+    "node": ">=14.3.0"
+  }
+}

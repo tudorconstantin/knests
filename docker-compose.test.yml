@@ -2,21 +2,37 @@ version: "3.5"
 
 networks:
   knests-test:
-    external: false
+    external: true
 
 services:
   client:
     # command: npm run test
-    command: sleep 60000
+    command: node server.js --hostname 0.0.0.0 --port="${SERVICE_PORT:-8080}"
+    build: 
+      context: ./e2e_tests
+      target: test
+      args: 
+        - CLIENT_URL=http://localhost:8080
+    ports:
+      - "8080:8080"
+    networks:
+      - "knests-test"
+
+  client:
+    command: node server.js --hostname 0.0.0.0 --port="${SERVICE_PORT:-8080}"
     build: 
       context: ./client
-      target: builder      
+      target: builder
+      args: 
+        - SERVER_URL=http://localhost:8001
+    ports:
+      - "8080:8080"
     networks:
       - "knests-test"
 
 
   server:
-    command: "npm run test:e2e"
+    command: "npm run start:test"
 
     build: 
       context: ./server

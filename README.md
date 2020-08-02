@@ -24,7 +24,7 @@ If interested, read about the [whys and the objectives of the Knests Stack on my
 
 It contains the [free admin dashboard theme from devias.io](https://react-material-dashboard.devias.io/dashboard).
 
-![Login](/client/public/screenshots/login.png?raw=true "Simple Login with Email" )
+![ "Simple Login with Email"](../client/public/screenshots/login.png)
 ![Signup](/client/public/screenshots/signup.png?raw=true "Signup Form")
 ![Dashboard Big](/client/public/screenshots/dashboard_big.png?raw=true "Big Dashboard")
 ![Responsive Dashboard](/client/public/screenshots/dashboard_small.png?raw=true "Responsive Dashboard")

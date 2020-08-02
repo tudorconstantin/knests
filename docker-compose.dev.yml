@@ -11,7 +11,7 @@ services:
       context: ./client
       target: builder
       args: 
-        - SERVER_URL=localhost:8080
+        - SERVER_URL=http://localhost:8000
     ports:
       - "8080:8080"
     networks:

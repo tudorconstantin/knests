@@ -3,7 +3,7 @@ const express = require('express');
 const next = require('next');
 
 // const API_URL = 'http://server:8081';
-const API_URL = 'http://localhost:8081';
+const API_URL = process.env.SERVER_URL || 'http://localhost:8081';
 
 const devProxy = {
   '/api': {
