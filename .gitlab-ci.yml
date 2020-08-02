@@ -1,4 +1,4 @@
-image: docker:19.03.11
+image: docker:19.03.12
 #image: "docker/compose:1.21.2"
 
 stages:
@@ -25,7 +25,7 @@ build:
   environment:
     name: build
   image:
-    name: docker/compose:1.25.5
+    name: docker/compose:1.26.2
     entrypoint: ["/bin/sh", "-c"]
   script:
     - echo "CONTAINERS TAG ${CI_COMMIT_SHORT_SHA:-latest}"
@@ -42,7 +42,7 @@ test:
   environment:
     name: test
   image:
-    name: docker/compose:1.25.5
+    name: docker/compose:1.26.2
     entrypoint: ["/bin/sh", "-c"]
   variables:
     NODE_ENV: test
