@@ -1,5 +1,7 @@
 module.exports = {
   preset: 'jest-playwright-preset',
+  testMatch: ["<rootDir>/tests/**/*.test.ts"],
+  rootDir: "./",
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
@@ -8,8 +10,9 @@ module.exports = {
   // setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
-    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
+    // '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    // '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
+    '^.+\\.tsx?$': 'ts-jest'
   },
   transformIgnorePatterns: [
     '/node_modules/',
