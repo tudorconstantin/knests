@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "jest -c jest.config.js && nyc report --reporter=lcovonly"
+    "test": "jest --config=jest.config.js && nyc report --reporter=lcovonly"
   },
   "dependencies": {
     "nyc": "^15.1.0"
