@@ -21,5 +21,7 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
-  verbose: false
+  testRunner: "jest-circus/runner",
+  testEnvironment: "./CustomEnvironment.js",
+  verbose: true
 };

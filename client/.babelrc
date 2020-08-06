@@ -1,0 +1,12 @@
+{
+  "presets": ["next/babel"],
+  "plugins": ["istanbul"],
+  "env": {
+    "test": {
+      "plugins": ["istanbul"]
+    },
+    "development": {
+      "plugins": ["istanbul"]
+    }
+  }
+}

@@ -11,6 +11,8 @@ services:
     build: 
       context: ./e2e_tests
       target: test
+    volumes:
+      - ./client:/data
     depends_on: 
       - client
     environment:

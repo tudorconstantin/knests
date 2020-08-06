@@ -1,6 +1,11 @@
 // https://github.com/playwright-community/jest-playwright/#configuration
 module.exports = {
-  // browsers: ["chromium", "firefox", "webkit"],
+  // browsers: ["firefox", "webkit"],
   browsers: ["chromium"],
-  collectCoverage: true
+  collectCoverage: true,
+  launchOptions: {
+    args: [
+      `--no-sandbox`,
+    ],
+  }
 }
