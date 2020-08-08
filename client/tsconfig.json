@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -15,6 +15,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "jsx": "preserve",
     "sourceMap": true
   },
@@ -27,10 +28,10 @@
     "**/*.tsx"
   ],
   "types": [
-    "@types/jest",
-    "jest-playwright-preset",
-    "expect-playwright"
-  ],
+      "@types/jest",
+      "jest-playwright-preset",
+      "expect-playwright"
+    ],
   "paths": {
     "~root/*"      : ["./*"],
     "~components/*": ["./components/*"],
