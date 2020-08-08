@@ -5,30 +5,17 @@ networks:
     external: true
 
 services:
-  e2e:
-    command: npm run test
-    # command: node server.js --hostname 0.0.0.0 --port="${SERVICE_PORT:-8080}"
-    build: 
-      context: ./e2e_tests
-      target: test
-    volumes:
-      - ./client:/data
-    depends_on: 
-      - client
-    environment:
-      CLIENT_URL: http://client:8080
-    networks:
-      - "knests-test"
-
   client:
-    command: node server.js --hostname 0.0.0.0 --port="${SERVICE_PORT:-8080}"
+    command: npm run test:e2e
     build: 
       context: ./client
       target: builder
     ports:
       - "8080:8080"
     environment:
+      CLIENT_URL: http://localhost:8080
       SERVER_URL: http://server:8081
+      OWN_PORT: "${SERVICE_PORT:-8080}"
     networks:
       - "knests-test"
 

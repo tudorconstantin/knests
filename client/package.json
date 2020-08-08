@@ -7,7 +7,8 @@
     "build": "link-module-alias && next build && next export",
     "start": "link-module-alias && next start",
     "postinstall": "link-module-alias",
-    "preinstall": "command -v link-module-alias && link-module-alias clean || true"
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true",
+    "test:e2e": "jest --config=jest.config.js --debug --verbose --runInBand --detectOpenHandles && nyc report --reporter=lcov --reporter=text-summary"
   },
   "dependencies": {
     "@apollo/client": "3.1.1",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/supertest": "2.0.10",
+    "@types/jest": "^26.0.8",
     "babel-plugin-istanbul": "^6.0.0",
     "express": "4.17.1",
     "link-module-alias": "1.2.0",
@@ -46,7 +48,12 @@
     "source-map-support": "^0.5.19",
     "ts-node": "^8.10.2",
     "tslint": "6.1.3",
-    "tslint-config-prettier": "1.18.0"
+    "tslint-config-prettier": "1.18.0",
+    "jest": "^26.2.2",
+    "jest-playwright-preset": "^1.3.0",
+    "playwright": "^1.2.1",
+    "playwright-chromium": "^1.2.1",
+    "ts-jest": "^26.1.4"
   },
   "engines": {
     "node": ">=14.3.0"

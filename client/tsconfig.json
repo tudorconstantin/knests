@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -12,10 +12,9 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "preserve",
     "sourceMap": true
   },
@@ -26,6 +25,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
+  ],
+  "types": [
+    "@types/jest",
+    "jest-playwright-preset",
+    "expect-playwright"
   ],
   "paths": {
     "~root/*"      : ["./*"],
