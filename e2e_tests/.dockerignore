@@ -1,4 +1,4 @@
-# node_modules
+node_modules
 npm-debug.log
 Dockerfile*
 docker-compose*
@@ -8,3 +8,6 @@ docker-compose*
 README.md
 LICENSE
 .vscode
+.nyc_output
+coverage
+.cache

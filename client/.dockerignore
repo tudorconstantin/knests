@@ -9,3 +9,5 @@ README.md
 LICENSE
 .vscode
 .next
+.dist
+.nyc_output
