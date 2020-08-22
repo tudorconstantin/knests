@@ -75,18 +75,21 @@ RUN apt-get update \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /data/
-RUN chmod -R a+rw /data/
+WORKDIR /e2e/
+RUN chmod -R a+rw /e2e/
 RUN addgroup --gid 1024 nodegroup
 ## add user node to the group with GID 1024
-RUN adduser node nodegroup 
-RUN chown -R node:nodegroup /data
+RUN adduser node nodegroup
+RUN usermod -d /e2e node
+RUN chown -R node:nodegroup /e2e
 USER node
-COPY --chown=node:nodegroup package.json /data/
+RUN mkdir app
+COPY --chown=node:nodegroup package.json /e2e/app/
 
+WORKDIR /e2e/app/
 RUN npm install
 
-ENV PATH=/data/node_modules/.bin:$PATH
+ENV PATH=/e2e/app/node_modules/.bin:$PATH
 
 COPY . .
 COPY ./docker/entrypoint.sh /entrypoint/
