@@ -16,7 +16,7 @@ module.exports = (phase, { defaultConfig }) => {
       // config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
 
       if (process.env.NODE_ENV === 'test') {
-        config.devtool = 'inline-source-map';
+        // config.devtool = 'inline-source-map';
       }
       // Important: return the modified config
       return config;

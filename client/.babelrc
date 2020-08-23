@@ -2,13 +2,6 @@
   "presets": ["next/babel"],
   "plugins": ["istanbul"],
   "env": {
-    // "test": {
-    //   "plugins": [
-    //     ["istanbul", {
-    //       "useInlineSourceMaps": true
-    //     }]
-    //   ]
-    // },
     "development": {
       "plugins": ["istanbul"]
     }
