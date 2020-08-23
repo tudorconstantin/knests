@@ -9,8 +9,9 @@ USER node
 COPY --chown=node:nodegroup package.json /data/
 
 RUN npm install
-
 ENV PATH=/data/node_modules/.bin:$PATH
+
+RUN next telemetry disable
 
 COPY . .
 COPY ./docker/entrypoint.sh /entrypoint/
@@ -19,6 +20,7 @@ RUN ["chmod", "+x", "/entrypoint/entrypoint.sh"]
 USER node
 
 ARG SERVER_URL
+RUN next telemetry status
 RUN npm run build
 ENTRYPOINT ["/entrypoint/entrypoint.sh"]
 

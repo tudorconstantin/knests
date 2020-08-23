@@ -2,6 +2,7 @@
 node_modules/
 dist/
 coverage/
+.nyc_output/
 
 .ash_history
 .npm

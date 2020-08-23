@@ -10,6 +10,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
+    "start:test": "nyc nest start",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "tslint -p tsconfig.json -c tslint.json",
@@ -45,6 +46,7 @@
     "type-graphql": "1.0.0"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@nestjs/cli": "7.4.1",
     "@nestjs/schematics": "7.0.1",
     "@nestjs/testing": "7.4.2",
@@ -55,7 +57,9 @@
     "@types/passport-jwt": "3.0.3",
     "@types/supertest": "2.0.10",
     "jest": "26.4.2",
+    "nyc": "^15.1.0",
     "prettier": "2.0.5",
+    "source-map-support": "^0.5.19",
     "supertest": "4.0.2",
     "ts-jest": "26.2.0",
     "ts-loader": "8.0.2",
@@ -66,7 +70,7 @@
     "typescript": "4.0.2"
   },
   "engines": {
-    "node": "14.8.0"
+    "node": ">=14.3.0"
   },
   "jest": {
     "moduleFileExtensions": [

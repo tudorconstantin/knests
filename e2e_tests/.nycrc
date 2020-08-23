@@ -1,0 +1,6 @@
+{
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "extension": [".ts", ".tsx"],
+    "exclude-after-remap": false
+}

@@ -7,6 +7,6 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   app.enableShutdownHooks();
-  await app.listen(process.env.PORT);
+  await app.listen(process.env.PORT || 8081);
 }
 bootstrap();
