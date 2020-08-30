@@ -13,7 +13,6 @@ RUN npm install
 
 FROM node:14.9.0-alpine3.11 as app
 
-RUN chmod -R oug+rw .nyc_output
 USER node
 COPY --chown=node:node ./docker/entrypoint.sh /tmp/
 RUN ["chmod", "+x", "/tmp/entrypoint.sh"]
@@ -27,8 +26,9 @@ ENV PATH=/home/node/node_modules/.bin:$PATH
 
 COPY --chown=node:node . .
 
-RUN cat /tmp/entrypoint.sh
-#RUN ls -al /home/node
+USER root
+RUN chmod -R oug+rw .nyc_output
+USER node
 
 EXPOSE 8081
 ENTRYPOINT ["/tmp/entrypoint.sh"]
