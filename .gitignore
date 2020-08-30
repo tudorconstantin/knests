@@ -2,7 +2,9 @@
 node_modules/
 dist/
 coverage/
-.nyc_output/
+server/.nyc_output/*.json
+client/.nyc_output/*.json
+e2e_tests/.nyc_output/*.json
 
 .ash_history
 .npm
