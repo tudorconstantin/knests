@@ -1,0 +1,20 @@
+name: The KNESTs stack CI/CD
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+      - master
+
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run e2e tests
+        run: |
+          docker network create knests-test
+          docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build --abort-on-container-exit --renew-anon-volumes --force-recreate
