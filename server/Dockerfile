@@ -13,6 +13,7 @@ RUN npm install
 
 FROM node:14.9.0-alpine3.11 as app
 
+RUN chmod -R oug+rw .nyc_output
 USER node
 COPY --chown=node:node ./docker/entrypoint.sh /tmp/
 RUN ["chmod", "+x", "/tmp/entrypoint.sh"]
