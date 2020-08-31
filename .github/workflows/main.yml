@@ -17,6 +17,6 @@ jobs:
       - name: Run e2e tests
         run: |
           mkdir -p server/.nyc_output
-          chmod -R oug+rwx server/.nyc_output
+          chmod -R oug+rwx server/*
           docker network create knests-test
           docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build --abort-on-container-exit --renew-anon-volumes --force-recreate
