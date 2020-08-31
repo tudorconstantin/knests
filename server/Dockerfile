@@ -27,6 +27,7 @@ ENV PATH=/home/node/node_modules/.bin:$PATH
 COPY --chown=node:node . .
 
 USER root
+RUN chown -R node:node .nyc_output
 RUN chmod -R oug+rw .nyc_output
 USER node
 
