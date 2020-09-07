@@ -7,6 +7,7 @@ WORKDIR /home/node
 
 # Copy or mount node app here
 # COPY --chown=node:node package*.json /home/node/
+COPY package*.json /home/node/
 
 RUN npm install
 
