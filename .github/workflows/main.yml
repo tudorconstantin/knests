@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run e2e tests
         run: |
+          whoami
           docker network create knests-test
           addgroup --gid 1000 nodegroup
           adduser node nodegroup
