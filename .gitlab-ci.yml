@@ -25,7 +25,7 @@ build:
   environment:
     name: build
   image:
-    name: docker/compose:1.27.3
+    name: docker/compose:1.27.4
     entrypoint: ["/bin/sh", "-c"]
   script:
     - echo "CONTAINERS TAG ${CI_COMMIT_SHORT_SHA:-latest}"
@@ -42,7 +42,7 @@ test:
   environment:
     name: test
   image:
-    name: docker/compose:1.27.3
+    name: docker/compose:1.27.4
     entrypoint: ["/bin/sh", "-c"]
   variables:
     NODE_ENV: test
