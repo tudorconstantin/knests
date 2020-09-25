@@ -61,7 +61,7 @@
     "nyc": "15.1.0",
     "prettier": "2.1.2",
     "source-map-support": "0.5.19",
-    "supertest": "4.0.2",
+    "supertest": "5.0.0",
     "ts-jest": "26.4.0",
     "ts-loader": "8.0.4",
     "ts-node": "9.0.0",
