@@ -15,7 +15,7 @@
     "@material-ui/icons": "4.9.1",
     "@material-ui/styles": "4.10.0",
     "@types/node": "13.13.25",
-    "@types/react": "16.9.52",
+    "@types/react": "16.9.53",
     "apollo-link-ws": "1.0.20",
     "apollo-utilities": "1.3.4",
     "chart.js": "2.9.3",
