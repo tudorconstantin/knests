@@ -1,4 +1,4 @@
-FROM node:14.14.0-alpine3.11 AS builder 
+FROM node:14.15.0-alpine3.11 AS builder 
 
 RUN apk add --no-cache python make g++
 
@@ -12,7 +12,7 @@ COPY package*.json /home/node/
 RUN npm install
 
 
-FROM node:14.14.0-alpine3.11 as app
+FROM node:14.15.0-alpine3.11 as app
 
 USER node
 COPY --chown=node:node ./docker/entrypoint.sh /tmp/
