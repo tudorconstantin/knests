@@ -19,6 +19,6 @@ jobs:
           whoami
           docker network create knests-test
           sudo addgroup --gid 1024 nodegroup
-          sudo useradd --create-home --shell /bin/bash node nodegroup
+          sudo useradd --create-home --shell /bin/bash node --gid nodegroup
           sudo chown -R node:nodegroup .
           docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build --abort-on-container-exit --renew-anon-volumes --force-recreate
