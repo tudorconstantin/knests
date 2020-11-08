@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "link-module-alias && next dev",
+    "dev": "NODE_ENV='development' && link-module-alias && node server2.js",
     "build": "link-module-alias && next build && next export",
     "start": "link-module-alias && next start",
     "postinstall": "link-module-alias",
@@ -14,6 +14,7 @@
     "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",
     "@material-ui/styles": "4.10.0",
+    "@types/jwt-decode": "^3.1.0",
     "@types/node": "13.13.30",
     "@types/react": "16.9.56",
     "apollo-link-ws": "1.0.20",

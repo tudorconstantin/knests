@@ -16,7 +16,7 @@ import validators from '../common/validators';
 import { ApolloProvider } from '@apollo/client';
 import withApollo from '../helpers/configureGraphQL';
 
-import * as jwtDecode from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 
 // Chart.helpers.extend(Chart.elements.Rectangle.prototype, {
 //   draw: chartjs.draw
