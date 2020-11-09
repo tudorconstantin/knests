@@ -18,6 +18,7 @@ FROM node:14.15.0-alpine3.11 as app
 RUN addgroup -S nodegroup && adduser -S -G node nodegroup
 
 RUN chown -R node:nodegroup /home/node/
+RUN mkdir -p /home/node/dist && chown -R node:nodegroup /home/node/dist
 
 USER node
 COPY --chown=node:nodegroup ./docker/entrypoint.sh /tmp/
