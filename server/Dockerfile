@@ -18,7 +18,7 @@ FROM node:14.15.0-alpine3.11 as app
 RUN addgroup -S nodegroup && adduser -S -G node nodegroup
 
 RUN chown -R node:nodegroup /home/node/
-RUN mkdir -p /home/node/dist && chown -R node:nodegroup /home/node/dist
+RUN rm -rf /home/node/dist
 
 USER node
 COPY --chown=node:nodegroup ./docker/entrypoint.sh /tmp/
@@ -32,6 +32,8 @@ COPY --from=builder /home/node/node_modules node_modules
 ENV PATH=/home/node/node_modules/.bin:$PATH
 
 COPY --chown=node:nodegroup . .
+
+RUN ["chmod", "-R", "oug+rwx", "/home/node"]
 
 EXPOSE 8081
 ENTRYPOINT ["/tmp/entrypoint.sh"]
