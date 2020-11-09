@@ -27,7 +27,7 @@ RUN ["chmod", "+x", "/tmp/entrypoint.sh"]
 WORKDIR /home/node/
 
 ## Copy built node modules and binaries without including the toolchain
-COPY --from=builder /home/node/node_modules node_modules
+COPY --from=builder --chown=node:nodegroup /home/node/node_modules node_modules
 
 ENV PATH=/home/node/node_modules/.bin:$PATH
 
