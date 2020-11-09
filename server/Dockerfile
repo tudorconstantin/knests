@@ -1,7 +1,7 @@
 FROM node:14.15.0-alpine3.11 AS builder 
 
 RUN apk add --no-cache python make g++
-RUN addgroup --gid 1024 node nodegroup
+RUN addgroup --gid 1024 -S node nodegroup
 
 USER node
 WORKDIR /home/node
@@ -15,7 +15,7 @@ RUN npm install
 
 FROM node:14.15.0-alpine3.11 as app
 
-RUN addgroup --gid 1024 node nodegroup
+RUN addgroup --gid 1024 -S node nodegroup
 
 RUN chown -R node:nodegroup /home/node/
 
