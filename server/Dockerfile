@@ -1,4 +1,4 @@
-FROM node:14.15.0-alpine3.11 AS builder 
+FROM node:14.15.1-alpine3.11 AS builder 
 
 RUN apk add --no-cache python make g++
 RUN addgroup -S nodegroup && adduser -S -G node nodegroup
@@ -13,7 +13,7 @@ COPY package*.json /home/node/
 RUN npm install
 
 
-FROM node:14.15.0-alpine3.11 as app
+FROM node:14.15.1-alpine3.11 as app
 
 RUN addgroup -S nodegroup && adduser -S -G node nodegroup
 
