@@ -15,7 +15,7 @@
     "playwright": "1.6.2",
     "playwright-chromium": "1.6.2",
     "ts-jest": "26.4.4",
-    "typescript": "4.1.2"
+    "typescript": "4.1.3"
   },
   "engines": {
     "node": ">=14.3.0"
