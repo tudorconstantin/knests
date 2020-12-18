@@ -1,4 +1,4 @@
-FROM node:14.15.1-buster AS builder
+FROM node:14.15.3-buster AS builder
 WORKDIR /data/
 RUN chmod -R a+rw /data/
 RUN addgroup --gid 1024 nodegroup
