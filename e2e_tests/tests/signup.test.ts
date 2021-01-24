@@ -2,7 +2,6 @@ const clientUrl = process.env.CLIENT_URL || 'http://localhost:8080';
 describe("Signup flow", () => {
   it("should 'signup or log in with email'", async () => {
     try {
-      console.log(`=======env`,`${clientUrl}/signup`);
       await page.goto(`${clientUrl}/signup`);
       // via the toEqualText method
       await expect(page).toEqualText("h2", "Sign up")      
