@@ -11,7 +11,7 @@ services:
     build: 
       context: ./e2e_tests
     volumes:
-      - ./e2e_tests:/e2e/app
+      # - ./e2e_tests:/e2e/app
       - ./client:/data
     depends_on: 
       - client
