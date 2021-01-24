@@ -28,6 +28,8 @@ services:
       - ./server/docker/dev.env
     networks:
       - "knests-dev"
+    volumes:
+      - ./server:/home/node
     ports:
       - "8000:8081"
     environment:

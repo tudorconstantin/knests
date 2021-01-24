@@ -76,7 +76,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /e2e/
-RUN chmod -R a+rw /e2e/
+RUN chmod -R a+rwx /e2e/
 RUN addgroup --gid 1024 nodegroup
 ## add user node to the group with GID 1024
 RUN adduser node nodegroup
