@@ -10,7 +10,7 @@
     "@types/jest": "26.0.20",
     "@types/node": "14.14.22",
     "jest": "26.6.3",
-    "jest-playwright-preset": "1.4.4",
+    "jest-playwright-preset": "1.4.5",
     "nyc": "15.1.0",
     "playwright": "1.8.0",
     "playwright-chromium": "1.8.0",
