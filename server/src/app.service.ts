@@ -15,7 +15,7 @@ export class AppService {
   /**
    * https://github.com/sheerun/knex-migrate
    * @param command
-   * @param flags
+   * @param flags 
    */
   async migrateUp(command: string, flags: object): Promise<string> {
     const cwd = './src';

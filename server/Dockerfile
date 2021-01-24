@@ -7,8 +7,7 @@ USER node
 WORKDIR /home/node
 
 # Copy or mount node app here
-COPY --chown=node:nodegroup package*.json /home/node/
-COPY package*.json /home/node/
+COPY --chown=node:nodegroup package.json /home/node/
 
 RUN npm install
 
@@ -25,6 +24,7 @@ COPY --chown=node:nodegroup ./docker/entrypoint.sh /tmp/
 RUN ["chmod", "+x", "/tmp/entrypoint.sh"]
 
 WORKDIR /home/node/
+RUN ["chown", "-R", "node:nodegroup", "/home/node/"]
 
 ## Copy built node modules and binaries without including the toolchain
 COPY --from=builder --chown=node:nodegroup /home/node/node_modules node_modules
@@ -33,7 +33,8 @@ ENV PATH=/home/node/node_modules/.bin:$PATH
 
 COPY --chown=node:nodegroup . .
 
-RUN ["chmod", "-R", "oug+rwx", "/home/node"]
+RUN ["ls", "-al",  "/home/node/"]
+# RUN ["chmod", "-R", "oug+rx", "/home/node/src/"]
 
 EXPOSE 8081
 ENTRYPOINT ["/tmp/entrypoint.sh"]

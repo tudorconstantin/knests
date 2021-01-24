@@ -34,7 +34,6 @@ services:
   server:
     image: "${CI_REGISTRY:-registry.gitlab.prforge.com}/${CI_PROJECT_PATH:-tudor/knests}/server:${CI_COMMIT_SHORT_SHA:-latest}"
     volumes:
-      - ./server:/home/node
       - /home/node/node_modules/
     depends_on:
       - postgres
