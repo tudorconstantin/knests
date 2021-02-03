@@ -13,7 +13,8 @@ ENV PATH=/data/node_modules/.bin:$PATH
 
 RUN next telemetry disable
 
-COPY . .
+# COPY . .
+COPY --chown=node:nodegroup . .
 COPY ./docker/entrypoint.sh /entrypoint/
 USER root
 RUN ["chmod", "+x", "/entrypoint/entrypoint.sh"]

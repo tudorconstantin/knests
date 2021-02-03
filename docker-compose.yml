@@ -6,7 +6,6 @@ services:
     ports:
       - "${SERVICE_PORT:-8080}"
     volumes:
-      - ./client:/data
       - /data/node_modules/
       - /data/dist/
     environment: 
