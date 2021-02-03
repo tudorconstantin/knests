@@ -7,5 +7,6 @@ module.exports = {
     args: [
       `--no-sandbox`,
     ],
+    // headless: false
   }
 }

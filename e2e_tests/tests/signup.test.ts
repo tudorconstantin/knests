@@ -1,13 +1,29 @@
+import { getUsers } from '../fixtures/users';
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:8080';
-describe("Signup flow", () => {
-  it("should 'signup or log in with email'", async () => {
+describe("Signup/login flow", () => {
+  it("should display the signup page", async () => {
+    await page.goto(`${clientUrl}/signup`);
+    await expect(page).toEqualText("h2", "Sign up");
+  });
+  it("should be able to sign up with user1", async () => {
+    const [user1, user2] = getUsers();
+    await expect(page).toEqualText("h2", "Sign up");
+    await page.type('input[name="email"]', user1.email);
+    await page.type('input[name="password"]', user1.password);
+    await page.type('input[name="repeatPassword"]', user1.password);
+    await page.click('button[type="submit"]');
 
-      await page.goto(`${clientUrl}/signup`);
-      // via the toEqualText method
-      await expect(page).toEqualText("h2", "Sign up");
-  })
-  // it("should navigate to iana once you click on 'More information'", async () => {
-  //   await page.click("a");
-  //   expect(page.url()).toMatch(/iana\.org/)
-  // })
+    await expect(page).toEqualText("h2", "Login with email");
+  });
+
+  it("should be able login with user1", async () => {
+    const [user1, user2] = getUsers();
+    await page.goto(`${clientUrl}/login`);
+    await expect(page).toEqualText("h2", "Login with email");
+    await page.type('input[name="email"]', user1.email);
+    await page.type('input[name="password"]', user1.password);
+    await page.click('button[type="submit"]');
+
+    await expect(page).toEqualText("p", "TOTAL USERS");
+  });
 })

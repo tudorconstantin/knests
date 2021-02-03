@@ -11,8 +11,8 @@ e2e_tests/.nyc_output/*.json
 .config
 package-lock.json
 
-/tests/e2e/videos/
-/tests/e2e/screenshots/
+videos/
+screenshots/
 
 #ignore lock files. We have pinned versions in package.json which are updated by the renovate bot
 client/package-lock.json
