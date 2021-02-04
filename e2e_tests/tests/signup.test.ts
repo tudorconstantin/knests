@@ -13,6 +13,7 @@ describe("Signup/login flow", () => {
     await page.type('input[name="repeatPassword"]', user1.password);
     await page.click('button[type="submit"]');
 
+    await page.waitForNavigation();
     await expect(page).toEqualText("h2", "Login with email");
   });
 
@@ -24,6 +25,7 @@ describe("Signup/login flow", () => {
     await page.type('input[name="password"]', user1.password);
     await page.click('button[type="submit"]');
 
-    await expect(page).toEqualText("p", "TOTAL USERS");
+    await page.waitForNavigation();
+    await expect(page).toHaveText("TOTAL USERS");
   });
 })
