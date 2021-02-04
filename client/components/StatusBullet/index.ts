@@ -1,1 +1,1 @@
-export { default } from './StatusBullet'
+export { default } from './StatusBullet';

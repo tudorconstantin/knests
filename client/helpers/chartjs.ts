@@ -188,5 +188,5 @@ function draw() {
 }
 
 export default {
-  draw
+  draw,
 };

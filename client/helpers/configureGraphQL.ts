@@ -1,4 +1,4 @@
-import { split, ApolloLink, ApolloClient, concat, InMemoryCache, HttpLink, } from '@apollo/client';
+import { split, ApolloLink, ApolloClient, concat, InMemoryCache, HttpLink } from '@apollo/client';
 
 import { getMainDefinition } from 'apollo-utilities';
 import withApollo from 'next-with-apollo';
@@ -27,7 +27,7 @@ interface Definintion {
 
 let authToken = null;
 if (process.browser){
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   if(token){
     authToken = `Bearer ${token}`;
   }
@@ -61,6 +61,7 @@ const webSocketLink: any = process.browser
 
 /**
  * Set Token
+ *
  * @param token
  */
 export const setToken = async (token: string) => {
@@ -74,6 +75,7 @@ export const setToken = async (token: string) => {
 
 /**
  * Set Token In Request
+ *
  * @param token
  */
 export const setTokenInRequest = async (token: string) => {
@@ -114,6 +116,6 @@ export default withApollo(
     return new ApolloClient({
       link: concat(authMiddleware, link),
       cache: new InMemoryCache().restore(initialState || {}),
-    })
+    });
   }
 );

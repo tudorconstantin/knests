@@ -9,7 +9,7 @@ import {
   CardContent,
   CardActions,
   Divider,
-  Button
+  Button,
 } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
@@ -22,14 +22,14 @@ const useStyles = makeStyles(() => ({
   root: {},
   chartContainer: {
     height: 400,
-    position: 'relative'
+    position: 'relative',
   },
   actions: {
-    justifyContent: 'flex-end'
-  }
+    justifyContent: 'flex-end',
+  },
 }));
 
-const LatestSales = props => {
+const LatestSales = (props) => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -74,7 +74,7 @@ const LatestSales = props => {
 };
 
 LatestSales.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default LatestSales;

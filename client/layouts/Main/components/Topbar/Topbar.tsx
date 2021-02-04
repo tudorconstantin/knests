@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
@@ -13,17 +13,17 @@ import CustomTheme from '../../../../theme';
 
 const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {
-    boxShadow: 'none'
+    boxShadow: 'none',
   },
   flexGrow: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   signOutButton: {
-    marginLeft: theme.spacing(1)
-  }
+    marginLeft: theme.spacing(1),
+  },
 }));
 
-const Topbar = props => {
+const Topbar = (props) => {
   const { className, onSidebarOpen, ...rest } = props;
 
   const classes = useStyles();
@@ -33,9 +33,9 @@ const Topbar = props => {
   const router = useRouter();
 
   const handleSignOut = () => {
-    router.push("/login");
-    localStorage.removeItem("token");
-  }
+    router.push('/login');
+    localStorage.removeItem('token');
+  };
 
   return (
     <AppBar
@@ -85,7 +85,7 @@ const Topbar = props => {
 
 Topbar.propTypes = {
   className: PropTypes.string,
-  onSidebarOpen: PropTypes.func
+  onSidebarOpen: PropTypes.func,
 };
 
 export default Topbar;

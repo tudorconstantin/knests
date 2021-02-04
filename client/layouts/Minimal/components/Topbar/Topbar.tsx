@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from "next/link";
+import Link from 'next/link';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
@@ -7,11 +7,11 @@ import { AppBar, Toolbar } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   root: {
-    boxShadow: 'none'
-  }
+    boxShadow: 'none',
+  },
 }));
 
-const Topbar = props => {
+const Topbar = (props) => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -36,7 +36,7 @@ const Topbar = props => {
 };
 
 Topbar.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default Topbar;

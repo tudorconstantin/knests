@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import validate from "validate.js";
-import { makeStyles } from "@material-ui/styles";
+import validate from 'validate.js';
+import { makeStyles } from '@material-ui/styles';
 import {
   Grid,
   Button,
@@ -10,23 +10,23 @@ import {
   TextField,
   // Link,
   Typography,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import CustomTheme from "~theme";
+import CustomTheme from '~theme';
 
-import { gql, useMutation } from "@apollo/client";
-import { useRouter } from "next/router";
+import { gql, useMutation } from '@apollo/client';
+import { useRouter } from 'next/router';
 
 const schema = {
   email: {
-    presence: { allowEmpty: false, message: "required field" },
+    presence: { allowEmpty: false, message: 'required field' },
     email: true,
     length: {
       maximum: 64,
     },
   },
   password: {
-    presence: { allowEmpty: false, message: "required field" },
+    presence: { allowEmpty: false, message: 'required field' },
     length: {
       maximum: 128,
     },
@@ -36,30 +36,30 @@ const schema = {
 const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {
     backgroundColor: theme.palette.background.default,
-    height: "100%",
+    height: '100%',
   },
   grid: {
-    height: "100%",
+    height: '100%',
   },
   quoteContainer: {
-    [theme.breakpoints.down("md")]: {
-      display: "none",
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
     },
   },
   quote: {
     backgroundColor: theme.palette.background.default,
-    height: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundImage: "url(/images/auth.jpg)",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundImage: 'url(/images/auth.jpg)',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
   },
   quoteInner: {
-    textAlign: "center",
-    flexBasis: "600px",
+    textAlign: 'center',
+    flexBasis: '600px',
   },
   quoteText: {
     color: theme.palette.common.white,
@@ -74,13 +74,13 @@ const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   },
   contentContainer: {},
   content: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   contentHeader: {
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
     paddingTop: theme.spacing(5),
     paddingBototm: theme.spacing(2),
     paddingLeft: theme.spacing(2),
@@ -91,10 +91,10 @@ const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   },
   contentBody: {
     flexGrow: 1,
-    display: "flex",
-    alignItems: "center",
-    [theme.breakpoints.down("md")]: {
-      justifyContent: "center",
+    display: 'flex',
+    alignItems: 'center',
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'center',
     },
   },
   form: {
@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme: typeof CustomTheme) => ({
     paddingRight: 100,
     paddingBottom: 125,
     flexBasis: 700,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('sm')]: {
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2),
     },
@@ -143,8 +143,8 @@ const SignIn = (props) => {
 
   if (data) {
     if (process.browser == true) {
-      localStorage.setItem("token", data.login.token);
-      router.push("/dashboard/admin");
+      localStorage.setItem('token', data.login.token);
+      router.push('/dashboard/admin');
     }
   }
 
@@ -184,7 +184,7 @@ const SignIn = (props) => {
       values: {
         ...formState.values,
         [event.target.name]:
-          event.target.type === "checkbox"
+          event.target.type === 'checkbox'
             ? event.target.checked
             : event.target.value,
       },
@@ -271,32 +271,32 @@ const SignIn = (props) => {
 
                 <TextField
                   className={classes.textField}
-                  error={hasError("email")}
+                  error={hasError('email')}
                   fullWidth
                   helperText={
-                    ""
+                    ''
                     // hasError("email") ? formState.errors.email[0] : null
                   }
                   label="Email"
                   name="email"
                   onChange={handleChange}
                   type="text"
-                  value={formState.values.email || ""}
+                  value={formState.values.email || ''}
                   variant="outlined"
                 />
                 <TextField
                   className={classes.textField}
-                  error={hasError("password")}
+                  error={hasError('password')}
                   fullWidth
                   helperText={
-                    ""
+                    ''
                     // hasError("password") ? formState.errors.password[0] : null
                   }
                   label="Password"
                   name="password"
                   onChange={handleChange}
                   type="password"
-                  value={formState.values.password || ""}
+                  value={formState.values.password || ''}
                   variant="outlined"
                 />
                 <Button

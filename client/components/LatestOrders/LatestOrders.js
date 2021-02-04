@@ -24,33 +24,33 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import mockData from './data';
 import { StatusBullet } from '../';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {},
   content: {
-    padding: 0
+    padding: 0,
   },
   inner: {
-    minWidth: 800
+    minWidth: 800,
   },
   statusContainer: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   status: {
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   actions: {
-    justifyContent: 'flex-end'
-  }
+    justifyContent: 'flex-end',
+  },
 }));
 
 const statusColors = {
   delivered: 'success',
   pending: 'info',
-  refunded: 'danger'
+  refunded: 'danger',
 };
 
-const LatestOrders = props => {
+const LatestOrders = (props) => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -100,7 +100,7 @@ const LatestOrders = props => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {orders.map(order => (
+                {orders.map((order) => (
                   <TableRow
                     hover
                     key={order.id}
@@ -142,7 +142,7 @@ const LatestOrders = props => {
 };
 
 LatestOrders.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default LatestOrders;

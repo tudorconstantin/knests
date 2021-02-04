@@ -11,5 +11,5 @@ export default {
   MuiPaper,
   MuiTableCell,
   MuiTableHead,
-  MuiTypography
+  MuiTypography,
 };

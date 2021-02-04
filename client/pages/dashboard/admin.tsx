@@ -1,7 +1,7 @@
-import React from "react";
-import { makeStyles } from "@material-ui/styles";
-import { Grid } from "@material-ui/core";
-import Layout from "../../layouts/Main";
+import React from 'react';
+import { makeStyles } from '@material-ui/styles';
+import { Grid } from '@material-ui/core';
+import Layout from '../../layouts/Main';
 
 import {
   Budget,
@@ -12,9 +12,9 @@ import {
   UsersByDevice,
   LatestProducts,
   LatestOrders,
-} from "../../components";
+} from '../../components';
 
-import CustomTheme from "~theme";
+import CustomTheme from '~theme';
 
 const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {

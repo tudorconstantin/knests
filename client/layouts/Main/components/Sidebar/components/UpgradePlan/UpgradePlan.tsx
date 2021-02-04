@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Typography, Button, colors } from '@material-ui/core';
 
-import CustomTheme from "~theme";
+import CustomTheme from '~theme';
 
 const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   root: {
-    backgroundColor: colors.grey[50]
+    backgroundColor: colors.grey[50],
   },
   media: {
     paddingTop: theme.spacing(2),
@@ -16,20 +16,20 @@ const useStyles = makeStyles((theme: typeof CustomTheme) => ({
     textAlign: 'center',
     '& > img': {
       height: '100%',
-      width: 'auto'
-    }
+      width: 'auto',
+    },
   },
   content: {
-    padding: theme.spacing(1, 2)
+    padding: theme.spacing(1, 2),
   },
   actions: {
     padding: theme.spacing(1, 2),
     display: 'flex',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 }));
 
-const UpgradePlan = props => {
+const UpgradePlan = (props) => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -75,7 +75,7 @@ const UpgradePlan = props => {
 };
 
 UpgradePlan.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default UpgradePlan;

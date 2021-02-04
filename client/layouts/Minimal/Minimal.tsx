@@ -7,14 +7,14 @@ import { Topbar } from './components';
 const useStyles = makeStyles(() => ({
   root: {
     paddingTop: 64,
-    height: '100%'
+    height: '100%',
   },
   content: {
-    height: '100%'
-  }
+    height: '100%',
+  },
 }));
 
-const Minimal = props => {
+const Minimal = (props) => {
   const { children } = props;
 
   const classes = useStyles();
@@ -29,7 +29,7 @@ const Minimal = props => {
 
 Minimal.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default Minimal;

@@ -13,7 +13,7 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
-  IconButton
+  IconButton,
 } from '@material-ui/core';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -22,21 +22,21 @@ import mockData from './data';
 
 const useStyles = makeStyles(() => ({
   root: {
-    height: '100%'
+    height: '100%',
   },
   content: {
-    padding: 0
+    padding: 0,
   },
   image: {
     height: 48,
-    width: 48
+    width: 48,
   },
   actions: {
-    justifyContent: 'flex-end'
-  }
+    justifyContent: 'flex-end',
+  },
 }));
 
-const LatestProducts = props => {
+const LatestProducts = (props) => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -96,7 +96,7 @@ const LatestProducts = props => {
 };
 
 LatestProducts.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default LatestProducts;
