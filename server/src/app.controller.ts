@@ -8,7 +8,7 @@ export class AppController {
   constructor(
     private readonly authService: AuthService,
     private readonly appService: AppService,
-  ) {}
+  ) { }
 
   @UseGuards(LocalAuthGuard)
   @Post('auth/login')
