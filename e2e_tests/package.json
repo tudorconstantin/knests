@@ -21,7 +21,7 @@
     "node": ">=14.3.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.12.13",
-    "@babel/preset-typescript": "^7.12.13"
+    "@babel/plugin-transform-modules-commonjs": "7.12.13",
+    "@babel/preset-typescript": "7.12.13"
   }
 }
