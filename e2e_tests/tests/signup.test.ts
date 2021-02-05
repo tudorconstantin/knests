@@ -1,3 +1,4 @@
+process.env.DEBUG="pw:api"
 import { getUsers } from '../fixtures/users';
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:8080';
 describe("Signup/login flow", () => {
