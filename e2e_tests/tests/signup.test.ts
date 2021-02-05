@@ -5,7 +5,7 @@ describe("Signup/login flow", () => {
   it("should display the signup page", async () => {
     await page.goto(`${clientUrl}/signup`);
     await expect(page).toEqualText("h2", "Sign up");
-  });
+  }, 120000);
   it("should be able to sign up with user1", async () => {
     const [user1, user2] = getUsers();
     await expect(page).toEqualText("h2", "Sign up");
@@ -17,7 +17,7 @@ describe("Signup/login flow", () => {
       await page.waitForNavigation(),
     ]);
     await expect(page).toEqualText("h2", "Login with email");
-  });
+  }, 120000);
 
   it("should be able login with user1", async () => {
     const [user1, user2] = getUsers();
@@ -30,5 +30,5 @@ describe("Signup/login flow", () => {
       await page.waitForNavigation(),
     ]);
     await expect(page).toHaveText("TOTAL USERS");
-  });
+  }, 120000);
 })
