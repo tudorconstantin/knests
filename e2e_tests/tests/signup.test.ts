@@ -11,9 +11,10 @@ describe("Signup/login flow", () => {
     await page.type('input[name="email"]', user1.email);
     await page.type('input[name="password"]', user1.password);
     await page.type('input[name="repeatPassword"]', user1.password);
-    await page.click('button[type="submit"]');
-
-    await page.waitForNavigation();
+    await Promise.all([
+      await page.click('button[type="submit"]'),  
+      await page.waitForNavigation(),
+    ]);
     await expect(page).toEqualText("h2", "Login with email");
   });
 
@@ -23,9 +24,10 @@ describe("Signup/login flow", () => {
     await expect(page).toEqualText("h2", "Login with email");
     await page.type('input[name="email"]', user1.email);
     await page.type('input[name="password"]', user1.password);
-    await page.click('button[type="submit"]');
-
-    await page.waitForNavigation();
+    await Promise.all([
+      await page.click('button[type="submit"]'),
+      await page.waitForNavigation(),
+    ]);
     await expect(page).toHaveText("TOTAL USERS");
   });
 })

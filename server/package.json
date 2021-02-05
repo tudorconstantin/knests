@@ -53,6 +53,7 @@
     "@nestjs/testing": "7.6.11",
     "@types/bcrypt": "3.0.0",
     "@types/jest": "26.0.20",
+    "@types/knex": "^0.16.1",
     "@types/node": "12.12.38",
     "@types/passport-jwt": "3.0.4",
     "@types/supertest": "2.0.10",
