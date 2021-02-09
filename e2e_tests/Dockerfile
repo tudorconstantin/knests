@@ -1,4 +1,4 @@
-FROM node:14.15.4-buster AS test
+FROM node:14.15.5-buster AS test
 
 RUN ["mkdir", "/entrypoint"]
 # 2. Install WebKit dependencies
