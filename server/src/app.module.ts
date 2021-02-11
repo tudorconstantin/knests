@@ -26,7 +26,8 @@ const isProduction = process.env.NODE_ENV === 'production';
     // schema first dev
     GraphQLModule.forRoot({
       typePaths: ['./**/*.graphql'],
-      installSubscriptionHandlers: true,
+      // installSubscriptionHandlers: true,
+      installSubscriptionHandlers: false,
       debug: !isProduction,
       playground: !isProduction,
       context: ({ req }) => ({ req }),

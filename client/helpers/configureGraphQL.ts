@@ -4,7 +4,7 @@ import { getMainDefinition } from 'apollo-utilities';
 import withApollo from 'next-with-apollo';
 
 import fetch from 'isomorphic-unfetch';
-import { WebSocketLink } from 'apollo-link-ws';
+// import { WebSocketLink } from 'apollo-link-ws';
 import Cookies from 'js-cookie';
 
 let l = {} as any;
@@ -50,14 +50,14 @@ const authMiddleware = new ApolloLink((operation, forward) => {
   return forward(operation);
 });
 
-const webSocketLink: any = process.browser
-  ? new WebSocketLink({
-    uri: WEB_SOCKET_LINK,
-    options: {
-      reconnect: true,
-    },
-  })
-  : null;
+// const webSocketLink: any = process.browser
+//   ? new WebSocketLink({
+//     uri: WEB_SOCKET_LINK,
+//     options: {
+//       reconnect: true,
+//     },
+//   })
+//   : null;
 
 /**
  * Set Token
@@ -100,16 +100,18 @@ export const destroyToken = async () => {
   }
 };
 
-const link = process.browser
-  ? split(
-    ({ query }) => {
-      const { kind, operation }: Definintion = getMainDefinition(query);
-      return kind === 'OperationDefinition' && operation === 'subscription';
-    },
-    webSocketLink,
-    httpLink
-  )
-  : httpLink;
+const link = httpLink;
+
+// const link = process.browser
+//   ? split(
+//     ({ query }) => {
+//       const { kind, operation }: Definintion = getMainDefinition(query);
+//       return kind === 'OperationDefinition' && operation === 'subscription';
+//     },
+//     webSocketLink,
+//     httpLink
+//   )
+//   : httpLink;
 
 export default withApollo(
   ({ initialState, ctx, headers }) => {

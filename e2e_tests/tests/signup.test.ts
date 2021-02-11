@@ -13,10 +13,10 @@ describe("Signup/login flow", () => {
     await page.type('input[name="password"]', user1.password);
     await page.type('input[name="repeatPassword"]', user1.password);
 
-    await Promise.all([
-      page.waitForNavigation({ timeout: 60000 }),
-      page.click('button[type="submit"]'),
-    ]);
+    // await Promise.all([
+    await page.click('button[type="submit"]');
+    await page.waitForNavigation({ timeout: 60000, waitUntil: 'domcontentloaded' });
+    // ]);
 
     await expect(page).toEqualText("h2", "Login with email");
   }, 120000);
@@ -28,10 +28,10 @@ describe("Signup/login flow", () => {
     await page.type('input[name="email"]', user1.email);
     await page.type('input[name="password"]', user1.password);
 
-    await Promise.all([
-      page.waitForNavigation({ timeout: 60000 }),
-      page.click('button[type="submit"]'),
-    ]);
+    // await Promise.all([
+    await page.click('button[type="submit"]');
+    await page.waitForNavigation({ timeout: 60000, waitUntil: 'domcontentloaded' });
+    // ]);
 
     await expect(page).toHaveText("TOTAL USERS");
   }, 120000);
