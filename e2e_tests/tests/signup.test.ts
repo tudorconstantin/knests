@@ -1,4 +1,4 @@
-process.env.DEBUG="pw:api"
+process.env.DEBUG = "pw:api,pw:browser,pw:protocol";
 import { getUsers } from '../fixtures/users';
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:8080';
 describe("Signup/login flow", () => {
@@ -12,10 +12,12 @@ describe("Signup/login flow", () => {
     await page.type('input[name="email"]', user1.email);
     await page.type('input[name="password"]', user1.password);
     await page.type('input[name="repeatPassword"]', user1.password);
+
     await Promise.all([
-      await page.click('button[type="submit"]'),  
-      await page.waitForNavigation(),
+      page.waitForNavigation({ timeout: 60000 }),
+      page.click('button[type="submit"]'),
     ]);
+
     await expect(page).toEqualText("h2", "Login with email");
   }, 120000);
 
@@ -25,10 +27,12 @@ describe("Signup/login flow", () => {
     await expect(page).toEqualText("h2", "Login with email");
     await page.type('input[name="email"]', user1.email);
     await page.type('input[name="password"]', user1.password);
+
     await Promise.all([
-      await page.click('button[type="submit"]'),
-      await page.waitForNavigation(),
+      page.waitForNavigation({ timeout: 60000 }),
+      page.click('button[type="submit"]'),
     ]);
+
     await expect(page).toHaveText("TOTAL USERS");
   }, 120000);
 })
