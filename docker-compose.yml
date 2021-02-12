@@ -45,6 +45,6 @@ services:
         order: stop-first
 
   postgres:
-    image: postgres:12.5
+    image: postgres:12.6
     
 
