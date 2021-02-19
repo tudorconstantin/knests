@@ -22,6 +22,6 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "7.12.13",
-    "@babel/preset-typescript": "7.12.16"
+    "@babel/preset-typescript": "7.12.17"
   }
 }
