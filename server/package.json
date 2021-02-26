@@ -49,7 +49,7 @@
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "1.0.1",
     "@nestjs/cli": "7.5.5",
-    "@nestjs/schematics": "7.2.7",
+    "@nestjs/schematics": "7.2.8",
     "@nestjs/testing": "7.6.13",
     "@types/bcrypt": "3.0.0",
     "@types/jest": "26.0.20",
