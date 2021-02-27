@@ -59,7 +59,7 @@
     "@types/supertest": "2.0.10",
     "@typescript-eslint/eslint-plugin": "4.15.1",
     "@typescript-eslint/parser": "4.15.1",
-    "eslint": "7.20.0",
+    "eslint": "7.21.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "32.1.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
