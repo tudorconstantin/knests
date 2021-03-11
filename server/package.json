@@ -30,7 +30,7 @@
     "@nestjs/platform-express": "7.6.13",
     "@nestjsplus/config": "1.0.14",
     "@nestjsplus/knex": "1.0.0",
-    "apollo-server-express": "2.21.0",
+    "apollo-server-express": "2.21.1",
     "bcrypt": "5.0.1",
     "class-transformer": "0.4.0",
     "class-validator": "0.13.1",
