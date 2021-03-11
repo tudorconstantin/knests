@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV='development' && link-module-alias && node server2.js",
+    "dev": "NODE_ENV='development' && link-module-alias && node server.js",
     "build": "link-module-alias && next build && next export",
     "start": "link-module-alias && next start",
     "postinstall": "link-module-alias",
