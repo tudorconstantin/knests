@@ -55,7 +55,7 @@
     "@types/jest": "26.0.22",
     "@types/knex": "0.16.1",
     "@types/passport-jwt": "3.0.5",
-    "@types/node": "12.20.6",
+    "@types/node": "12.20.7",
     "@types/supertest": "2.0.10",
     "@typescript-eslint/eslint-plugin": "4.19.0",
     "@typescript-eslint/parser": "4.19.0",
