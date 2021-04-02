@@ -43,7 +43,7 @@
     "pg": "8.5.1",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
-    "rxjs": "6.6.6",
+    "rxjs": "6.6.7",
     "type-graphql": "1.1.1"
   },
   "devDependencies": {
