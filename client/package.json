@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "1.0.1",
-    "@types/supertest": "2.0.10",
+    "@types/supertest": "2.0.11",
     "babel-plugin-istanbul": "6.0.0",
     "express": "4.17.1",
     "link-module-alias": "1.2.0",
