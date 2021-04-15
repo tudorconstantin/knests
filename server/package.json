@@ -51,7 +51,7 @@
     "@nestjs/cli": "7.6.0",
     "@nestjs/schematics": "7.3.1",
     "@nestjs/testing": "7.6.15",
-    "@types/bcrypt": "3.0.0",
+    "@types/bcrypt": "3.0.1",
     "@types/jest": "26.0.22",
     "@types/knex": "0.16.1",
     "@types/passport-jwt": "3.0.5",
