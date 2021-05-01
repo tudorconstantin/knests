@@ -52,7 +52,7 @@
     "@nestjs/schematics": "7.3.1",
     "@nestjs/testing": "7.6.15",
     "@types/bcrypt": "3.0.1",
-    "@types/jest": "26.0.22",
+    "@types/jest": "26.0.23",
     "@types/knex": "0.16.1",
     "@types/passport-jwt": "3.0.5",
     "@types/node": "12.20.11",
