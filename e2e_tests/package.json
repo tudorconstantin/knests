@@ -9,7 +9,7 @@
     "@istanbuljs/nyc-config-typescript": "1.0.1",
     "@types/jest": "26.0.23",
     "@types/node": "14.17.1",
-    "jest": "27.0.3",
+    "jest": "27.0.4",
     "jest-playwright-preset": "1.6.1",
     "nyc": "15.1.0",
     "ts-jest": "27.0.3",
