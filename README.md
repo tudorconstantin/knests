@@ -22,9 +22,9 @@ If interested, read about the [whys and the objectives of the Knests Stack on my
 
 ## How it looks
 
-It contains the [free admin dashboard theme from devias.io](https://react-material-dashboard.devias.io/dashboard).
+It contains the [free admin dashboard theme from devias.io](https://material-kit-react.devias.io/app/dashboard).
 
-![ "Simple Login with Email"](../client/public/screenshots/login.png)
+![ "Simple Login with Email"](/client/public/screenshots/login.png)
 ![Signup](/client/public/screenshots/signup.png?raw=true "Signup Form")
 ![Dashboard Big](/client/public/screenshots/dashboard_big.png?raw=true "Big Dashboard")
 ![Responsive Dashboard](/client/public/screenshots/dashboard_small.png?raw=true "Responsive Dashboard")
@@ -84,12 +84,12 @@ Here are some commands that clear all kind of caches:
 There is some [frontend](https://github.com/tudorconstantin/knests/tree/master/client) / [backend](https://github.com/tudorconstantin/knests/tree/master/server) documentation written so you can debug things more thoroughly when they don't go as expected.
 
 ## Road map
-[] Fullstack e2e testing using Playwright and code coverage generating for both UI and server.
-[] Create tutorials documenting the development flow using the Knests stack.
-[] Since this is hosted on Github, migrate the Gitlab CI/CD pipeline to Github actions and dockerhub registry.
-[] Deployment and hosting on Kubernetes (?)
-[] Internationalization (?)
-[] Other good ideas
+- [ ] Fullstack e2e testing using Playwright and code coverage generating for both UI and server.
+- [ ] Create tutorials documenting the development flow using the Knests stack.
+- [ ] Since this is hosted on Github, migrate the Gitlab CI/CD pipeline to Github actions and dockerhub registry.
+- [ ] Deployment and hosting on Kubernetes (?)
+- [ ] Internationalization (?)
+- [ ] Other good ideas
   
 ## Wanna Help?
 - Pick any task from the road map, develop it, document it and submit a Pull Request
