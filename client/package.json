@@ -45,7 +45,7 @@
     "babel-plugin-istanbul": "6.0.0",
     "express": "4.17.1",
     "link-module-alias": "1.2.0",
-    "nodemon": "2.0.7",
+    "nodemon": "2.0.13",
     "nyc": "15.1.0",
     "source-map-support": "0.5.19",
     "ts-node": "10.0.0",
