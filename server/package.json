@@ -26,7 +26,7 @@
     "@nestjs/core": "7.6.18",
     "@nestjs/graphql": "7.11.0",
     "@nestjs/jwt": "7.2.0",
-    "@nestjs/passport": "7.1.5",
+    "@nestjs/passport": "7.1.6",
     "@nestjs/platform-express": "7.6.18",
     "@nestjsplus/config": "1.0.14",
     "@nestjsplus/knex": "1.0.0",
