@@ -25,7 +25,7 @@
     "graphql": "15.6.0",
     "graphql-tag": "2.12.5",
     "http-proxy-middleware": "2.0.1",
-    "js-cookie": "2.2.1",
+    "js-cookie": "3.0.1",
     "jwt-decode": "3.1.2",
     "moment": "2.29.1",
     "next": "11.1.2",
