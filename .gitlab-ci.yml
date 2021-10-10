@@ -1,4 +1,4 @@
-image: docker:20.10.8
+image: docker:20.10.9
 #image: "docker/compose:1.21.2"
 
 stages:
