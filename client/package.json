@@ -28,7 +28,7 @@
     "js-cookie": "3.0.1",
     "jwt-decode": "3.1.2",
     "moment": "2.29.1",
-    "next": "12.0.4",
+    "next": "12.0.5",
     "next-with-apollo": "5.2.1",
     "node-sass": "6.0.1",
     "react": "17.0.2",
