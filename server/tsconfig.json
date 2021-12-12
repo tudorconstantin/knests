@@ -9,6 +9,9 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "baseUrl": "./",
     "incremental": true,
     "allowJs": true,
