@@ -6,7 +6,7 @@
     "test": "node node_modules/jest/bin/jest.js --config=jest.config.js --runInBand --verbose --detectOpenHandles --maxWorkers=50% && nyc report --reporter=lcov --reporter=text-summary"
   },
   "dependencies": {
-    "@istanbuljs/nyc-config-typescript": "1.0.1",
+    "@istanbuljs/nyc-config-typescript": "1.0.2",
     "@types/jest": "27.0.3",
     "@types/node": "16.11.9",
     "jest": "27.4.4",
