@@ -49,9 +49,9 @@
     "nyc": "15.1.0",
     "source-map-support": "0.5.20",
     "ts-node": "10.4.0",
+    "eslint": "8.4.1",
     "@typescript-eslint/eslint-plugin": "5.6.0",
     "@typescript-eslint/parser": "5.6.0",
-    "eslint": "8.2.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-jsdoc": "37.2.0",
     "eslint-plugin-prefer-arrow": "1.2.3"
