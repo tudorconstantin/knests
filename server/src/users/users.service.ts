@@ -1,5 +1,5 @@
 import { Injectable, Inject, HttpException, HttpStatus, Logger } from '@nestjs/common';
-import { KNEX_CONNECTION } from '@nestjsplus/knex';
+import { InjectKnex, Knex } from 'nestjs-knex';
 
 import * as bcrypt from 'bcrypt';
 import { UserSignupDTO } from './dto/user-signup.dto';
@@ -15,7 +15,7 @@ interface DBRoles {
 @Injectable()
 export class UsersService {
     private readonly logger = new Logger(UsersService.name);
-    @Inject(KNEX_CONNECTION) private readonly knex;
+    @InjectKnex() private readonly knex: Knex;
 
     async findOne(email: string): Promise<UserDTO | undefined> {
         const [user] = await this.knex('users').where({ email });
@@ -42,6 +42,7 @@ export class UsersService {
 
     /**
      * The first user signing up will also have the ADMIN role. The rest of them, only the NORMAL role.
+     *
      * @param user :UserSignupDTO
      */
     async signup(user: UserSignupDTO): Promise<UserDTO | undefined> {
@@ -50,7 +51,7 @@ export class UsersService {
             const [total] = await this.knex('users').count();
             const signupRoles = [UserRoles.NORMAL];
 
-            if (parseInt(total.count, 10) === 0) {
+            if (parseInt(total.count as string, 10) === 0) {
                 signupRoles.push(UserRoles.ADMIN);
             }
             const newUser = await this.create(new UserDTO(classToPlain(user)));
