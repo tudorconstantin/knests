@@ -21,10 +21,10 @@
     "test:e2e": "jest --collectCoverage --config ./test/jest-e2e.json"
   },
   "dependencies": {
-
+    "@graphql-tools/schema": "^8.3.1",
     "@nestjs/common": "8.2.3",
     "@nestjs/core": "8.2.3",
-    "@nestjs/config": "1.1.5",    
+    "@nestjs/config": "1.1.5",
     "@nestjs/graphql": "9.1.2",
     "@nestjs/jwt": "8.0.0",
     "@nestjs/passport": "8.0.1",
@@ -35,19 +35,23 @@
     "bcrypt": "5.0.1",
     "class-transformer": "0.5.1",
     "class-validator": "0.13.1",
-    "graphql": "16.0.1",
+    "graphql": "^15.8.0",
     "graphql-tools": "8.2.0",
+    "knex": "^0.95.11",
     "knex-migrate": "1.7.4",
-    "passport": "0.5.0",
+    "nestjs-knex": "^2.0.0",
+    "passport": "0.4.0",
     "passport-jwt": "4.0.0",
     "passport-local": "1.0.0",
     "pg": "8.7.1",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
-    "rxjs": "7.4.0",
+    "subscriptions-transport-ws": "^0.11.0",
+    "ts-morph": "^13.0.2",
     "type-graphql": "1.1.1"
   },
   "devDependencies": {
+    "@apollo/gateway": "^0.44.1",
     "@istanbuljs/nyc-config-typescript": "1.0.2",
     "@nestjs/cli": "8.1.5",
     "@nestjs/schematics": "8.0.5",
@@ -72,8 +76,8 @@
     "ts-jest": "27.0.7",
     "ts-loader": "9.2.6",
     "ts-node": "10.4.0",
-    "typescript": "4.5.3"
-    "tsconfig-paths": "3.12.0",
+    "typescript": "4.5.3",
+    "tsconfig-paths": "3.12.0"
   },
   "engines": {
     "node": ">=14.3.0"
@@ -91,6 +95,5 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "snyk": true
+  }
 }

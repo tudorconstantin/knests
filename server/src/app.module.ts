@@ -1,17 +1,16 @@
 import { Module, OnModuleDestroy, Inject } from '@nestjs/common';
+import { KnexModule } from 'nestjs-knex';
 import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { ConfigModule } from '@nestjs/config';
 
-import { KnexConfig } from './config/knex';
-import { KnexModule } from '@nestjsplus/knex';
-import { KNEX_CONNECTION } from '@nestjsplus/knex';
-
 import { GraphQLModule } from '@nestjs/graphql';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+
+import { InjectKnex, Knex } from 'nestjs-knex';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -20,8 +19,13 @@ const isProduction = process.env.NODE_ENV === 'production';
     ConfigModule.forRoot({
       ignoreEnvFile: false,
     }),
-    KnexModule.registerAsync({
-      useClass: KnexConfig,
+    KnexModule.forRoot({
+      config: {
+        client: 'pg',
+        debug: true,
+        connection: process.env.DATABASE_URL,
+        pool: { min: 2, max: 7 },
+      },
     }),
     // schema first dev
     GraphQLModule.forRoot({
@@ -53,7 +57,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 export class AppModule implements OnModuleDestroy {
 
-  @Inject(KNEX_CONNECTION) private readonly knex;
+  @InjectKnex() private readonly knex: Knex;
 
   async onModuleDestroy() {
     await this.knex.destroy();

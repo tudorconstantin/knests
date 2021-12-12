@@ -1,5 +1,6 @@
 
-/** ------------------------------------------------------
+/*
+ * -------------------------------------------------------
  * THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
  * -------------------------------------------------------
  */
@@ -28,26 +29,28 @@ export class UserSignupInput {
 }
 
 export abstract class IMutation {
-    abstract login(user?: UserLoginInput): AuthPayload | Promise<AuthPayload>;
+    abstract login(user?: Nullable<UserLoginInput>): Nullable<AuthPayload> | Promise<Nullable<AuthPayload>>;
 
-    abstract signup(user?: UserSignupInput): User | Promise<User>;
+    abstract signup(user?: Nullable<UserSignupInput>): Nullable<User> | Promise<Nullable<User>>;
 
-    abstract addUser(user?: UserAddInput): User | Promise<User>;
+    abstract addUser(user?: Nullable<UserAddInput>): Nullable<User> | Promise<Nullable<User>>;
 }
 
 export class User {
     email: string;
     roles: UserRoles[];
     status: string;
-    createdAt?: string;
-    updatedAt?: string;
+    createdAt?: Nullable<string>;
+    updatedAt?: Nullable<string>;
 }
 
 export class AuthPayload {
-    token?: string;
-    user?: User;
+    token?: Nullable<string>;
+    user?: Nullable<User>;
 }
 
 export abstract class IQuery {
-    abstract user(userId: string): User | Promise<User>;
+    abstract user(userId: string): Nullable<User> | Promise<Nullable<User>>;
 }
+
+type Nullable<T> = T | null;

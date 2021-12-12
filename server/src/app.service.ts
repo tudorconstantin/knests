@@ -1,12 +1,12 @@
 import { Injectable, Inject, Logger } from '@nestjs/common';
+import { InjectKnex, Knex } from 'nestjs-knex';
 import knexMigrate from 'knex-migrate';
-import { KNEX_CONNECTION } from '@nestjsplus/knex';
 
 @Injectable()
 export class AppService {
   private readonly logger = new Logger(AppService.name);
 
-  @Inject(KNEX_CONNECTION) private readonly knex;
+  @InjectKnex() private readonly knex: Knex;
   async getHello(): Promise<string> {
     const users = await this.knex('users').select();
     return JSON.stringify(users);
@@ -14,6 +14,7 @@ export class AppService {
 
   /**
    * https://github.com/sheerun/knex-migrate
+   *
    * @param command
    * @param flags 
    */
