@@ -21,7 +21,7 @@
     "test:e2e": "jest --collectCoverage --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@graphql-tools/schema": "^8.3.1",
+    "@graphql-tools/schema": "8.3.1",
     "@nestjs/common": "8.2.6",
     "@nestjs/core": "8.2.6",
     "@nestjs/config": "1.1.5",
@@ -37,17 +37,17 @@
     "graphql": "16.3.0",
     "class-validator": "0.13.2",
     "graphql-tools": "8.2.0",
-    "knex": "^0.95.11",
+    "knex": "0.95.15",
     "knex-migrate": "1.7.4",
-    "nestjs-knex": "^2.0.0",
+    "nestjs-knex": "2.0.0",
     "passport": "0.4.0",
     "passport-jwt": "4.0.0",
     "passport-local": "1.0.0",
     "pg": "8.7.1",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
-    "subscriptions-transport-ws": "^0.11.0",
-    "ts-morph": "^13.0.2",
+    "subscriptions-transport-ws": "0.11.0",
+    "ts-morph": "13.0.3",
     "type-graphql": "1.1.1"
   },
   "devDependencies": {
