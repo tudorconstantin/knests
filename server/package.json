@@ -31,7 +31,7 @@
     "@nestjs/platform-express": "8.2.3",
     "@nestjsplus/config": "1.0.14",
     "@nestjsplus/knex": "1.0.0",
-    "apollo-server-express": "3.5.0",
+    "apollo-server-express": "3.6.2",
     "bcrypt": "5.0.1",
     "class-transformer": "0.5.1",
     "class-validator": "0.13.2",
@@ -51,7 +51,7 @@
     "type-graphql": "1.1.1"
   },
   "devDependencies": {
-    "@apollo/gateway": "^0.44.1",
+    "@apollo/gateway": "0.44.1",
     "@istanbuljs/nyc-config-typescript": "1.0.2",
     "@nestjs/cli": "8.1.5",
     "@nestjs/schematics": "8.0.5",
