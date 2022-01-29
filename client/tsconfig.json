@@ -17,7 +17,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "sourceMap": true
+    "sourceMap": true,
+    "incremental": true
   },
   "exclude": [
     "node_modules"
@@ -28,10 +29,20 @@
     "**/*.tsx"
   ],
   "paths": {
-    "~root/*"      : ["./*"],
-    "~components/*": ["./components/*"],
-    "~theme/*": ["./theme/*"],
-    "~layouts/*": ["./layouts/*"],
-    "~common/*": ["./common/*"]
+    "~root/*": [
+      "./*"
+    ],
+    "~components/*": [
+      "./components/*"
+    ],
+    "~theme/*": [
+      "./theme/*"
+    ],
+    "~layouts/*": [
+      "./layouts/*"
+    ],
+    "~common/*": [
+      "./common/*"
+    ]
   }
 }

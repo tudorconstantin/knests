@@ -10,7 +10,8 @@ import { List, ListItem, Button, colors } from '@material-ui/core';
 import CustomTheme from '~theme';
 
 const useStyles = makeStyles((theme: typeof CustomTheme) => ({
-  root: {},
+  root: {
+  },
   item: {
     display: 'flex',
     paddingTop: 0,
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme: typeof CustomTheme) => ({
     textTransform: 'none',
     letterSpacing: 0,
     width: '100%',
-    fontWeight: theme.typography.fontWeightMedium,
+    // fontWeight: theme.typography.fontWeightMedium,
   },
   icon: {
     color: theme.palette.primary.main,
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme: typeof CustomTheme) => ({
   },
   active: {
     color: theme.palette.primary.main,
-    fontWeight: theme.typography.fontWeightMedium,
+    // fontWeight: theme.typography.fontWeightMedium,
     '& $icon': {
       color: theme.palette.primary.main,
     },

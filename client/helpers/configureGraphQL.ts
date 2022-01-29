@@ -1,6 +1,5 @@
 import { split, ApolloLink, ApolloClient, concat, InMemoryCache, HttpLink } from '@apollo/client';
 
-import { getMainDefinition } from 'apollo-utilities';
 import withApollo from 'next-with-apollo';
 
 import fetch from 'isomorphic-unfetch';

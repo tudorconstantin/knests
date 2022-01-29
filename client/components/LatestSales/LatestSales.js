@@ -1,7 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { Bar } from 'react-chartjs-2';
+import { Bar, Chart } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement } from 'chart.js';
 import { makeStyles } from '@material-ui/styles';
 import {
   Card,
@@ -31,6 +32,7 @@ const useStyles = makeStyles(() => ({
 
 const LatestSales = (props) => {
   const { className, ...rest } = props;
+  ChartJS.register(CategoryScale, LinearScale, BarElement);
 
   const classes = useStyles();
 
