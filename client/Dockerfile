@@ -26,7 +26,7 @@ RUN npm run build
 ENTRYPOINT ["/entrypoint/entrypoint.sh"]
 
 
-FROM nginx:stable-alpine as app
+FROM nginx:stable-alpine as production
 
 ARG NGINX_PORT
 ARG API_URL
@@ -38,14 +38,17 @@ RUN apk --no-cache add shadow && \
    groupmod -g 1024 -o nginx
 # COPY --from=builder /data/dist /usr/share/nginx/html
 COPY --from=builder /data/out /usr/share/nginx/html
+RUN ls -al /usr/share/nginx/html
 COPY docker/nginx.conf.template /etc/nginx/conf.d/nginx.conf.template
 RUN export
 RUN sh -c "envsubst \"`env | awk -F = '{printf \" \\\\$%s\", $1}'`\" < /etc/nginx/conf.d/nginx.conf.template > /etc/nginx/conf.d/custom.conf"
 
-
-#CMD ["nginx", "-g", '"daemon off;"']
-
-#CMD ["cat", "/etc/nginx/conf.d/custom.conf"]
+RUN ps fax
+# CMD ["cat", "/etc/nginx/conf.d/custom.conf"]
+# CMD ["/usr/sbin/nginx", "-s", "reload", "-c", "/etc/nginx/conf.d/custom.conf"]
+ENTRYPOINT ["nginx" , "-g", "daemon off;"]
+# RUN cat /docker-entrypoint.sh
+# ENTRYPOINT [ "/docker-entrypoint.sh", $@ ]
 
 # FROM node:lts-alpine as app
 # USER node

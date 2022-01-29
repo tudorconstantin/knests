@@ -21,15 +21,16 @@ services:
       - "knests-test"
 
   client:
-    command: node server.js --hostname 0.0.0.0 --port="${SERVICE_PORT:-8080}"
+    # command: node server.js --hostname 0.0.0.0 --port="${SERVICE_PORT:-8080}"
     build: 
       context: ./client
-      target: builder
+      target: production
     ports:
       - "8082:8080"
     environment:
-      SERVER_URL: http://server:8081
-      NODE_ENV: test
+      - API_URL=server:8081
+      - PORT=8080
+      - NGINX_PORT=8080
     networks:
       - "knests-test"
 
