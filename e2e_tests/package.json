@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "node node_modules/jest/bin/jest.js --config=jest.config.js --runInBand --verbose --detectOpenHandles --maxWorkers=50% && nyc report --reporter=lcov --reporter=text-summary"
+    "test": "rm -rf .nyc_output && node node_modules/jest/bin/jest.js --config=jest.config.js --runInBand --verbose --detectOpenHandles && nyc report --reporter=lcov --reporter=text-summary"
   },
   "dependencies": {
     "@istanbuljs/nyc-config-typescript": "1.0.2",
