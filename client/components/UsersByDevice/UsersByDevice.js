@@ -1,5 +1,6 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement } from 'chart.js';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/styles';
@@ -40,6 +41,8 @@ const useStyles = makeStyles((theme) => ({
 
 const UsersByDevice = (props) => {
   const { className, ...rest } = props;
+  ChartJS.register(ArcElement);
+
 
   const classes = useStyles();
   const theme = useTheme();

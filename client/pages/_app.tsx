@@ -8,7 +8,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import validate from 'validate.js';
 
-import { chartjs } from '../helpers';
 import theme from '../theme';
 
 import validators from '../common/validators';
