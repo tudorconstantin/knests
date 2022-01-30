@@ -47,7 +47,7 @@
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-jsdoc": "37.2.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
-    "express": "4.17.1",
+    "express": "4.17.2",
     "link-module-alias": "1.2.0",
     "nodemon": "2.0.15",
     "nyc": "15.1.0",
