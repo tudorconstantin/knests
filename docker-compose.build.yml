@@ -4,7 +4,7 @@ services:
   client:
     build: 
       context: ./client
-      target: app
+      target: production
       args: #we need these vars at containers' build time to configure nginx
       - API_URL=server:8081
       - PORT=8080
@@ -13,4 +13,4 @@ services:
   server:
     build: 
       context: ./server
-      target: app
+      target: production

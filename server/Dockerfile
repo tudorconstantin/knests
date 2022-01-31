@@ -12,7 +12,7 @@ COPY --chown=node:nodegroup package.json /home/node/
 RUN npm install
 
 
-FROM node:16.13.0-alpine3.11 as app
+FROM node:16.13.0-alpine3.11 as production
 
 RUN addgroup -S nodegroup && adduser -S -G node nodegroup
 

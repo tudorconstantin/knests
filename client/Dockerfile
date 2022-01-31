@@ -43,10 +43,10 @@ COPY docker/nginx.conf.template /etc/nginx/conf.d/nginx.conf.template
 RUN export
 RUN sh -c "envsubst \"`env | awk -F = '{printf \" \\\\$%s\", $1}'`\" < /etc/nginx/conf.d/nginx.conf.template > /etc/nginx/conf.d/custom.conf"
 
-RUN ps fax
+# RUN ps fax
 # CMD ["cat", "/etc/nginx/conf.d/custom.conf"]
 # CMD ["/usr/sbin/nginx", "-s", "reload", "-c", "/etc/nginx/conf.d/custom.conf"]
-ENTRYPOINT ["nginx" , "-g", "daemon off;"]
+# ENTRYPOINT ["nginx" , "-g", "daemon off;"]
 # RUN cat /docker-entrypoint.sh
 # ENTRYPOINT [ "/docker-entrypoint.sh", $@ ]
 
