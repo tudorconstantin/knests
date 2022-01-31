@@ -33,6 +33,8 @@ services:
     command: "npm start"
 
   postgres:
+    networks:
+      - knests-production
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 5UPP3rSecr3tPAssword
