@@ -24,7 +24,7 @@ const isProduction = process.env.NODE_ENV === 'production';
         client: 'pg',
         debug: true,
         connection: process.env.DATABASE_URL,
-        pool: { min: 2, max: 7 },
+        pool: { min: 0, max: 7, idleTimeoutMillis: 300_000 },
       },
     }),
     // schema first dev

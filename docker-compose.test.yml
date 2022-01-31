@@ -22,6 +22,7 @@ services:
 
   client:
     # command: node server.js --hostname 0.0.0.0 --port="${SERVICE_PORT:-8080}"
+    command: echo ${API_URL} && nginx -g "daemon off;"
     build: 
       context: ./client
       target: production
@@ -40,7 +41,7 @@ services:
 
     build: 
       context: ./server
-      target: app
+      target: production
     restart: "no"
     env_file:
       - ./server/docker/test.env
