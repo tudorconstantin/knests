@@ -64,7 +64,7 @@
     "@typescript-eslint/eslint-plugin": "5.11.0",
     "@typescript-eslint/parser": "5.11.0",
     "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-jsdoc": "37.8.0",
+    "eslint-plugin-jsdoc": "37.8.1",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "jest": "27.5.1",
     "nyc": "15.1.0",
