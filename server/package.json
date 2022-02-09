@@ -52,7 +52,7 @@
     "@apollo/gateway": "0.42.0",
     "@istanbuljs/nyc-config-typescript": "1.0.2",
     "@nestjs/cli": "8.2.0",
-    "@nestjs/schematics": "8.0.5",
+    "@nestjs/schematics": "8.0.6",
     "@nestjs/testing": "8.2.6",
     "@types/bcrypt": "5.0.0",
     "@types/jest": "27.4.0",
