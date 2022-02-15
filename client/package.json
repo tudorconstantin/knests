@@ -39,8 +39,8 @@
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "1.0.2",
     "@types/supertest": "2.0.11",
-    "@typescript-eslint/eslint-plugin": "5.11.0",
-    "@typescript-eslint/parser": "5.11.0",
+    "@typescript-eslint/eslint-plugin": "5.12.0",
+    "@typescript-eslint/parser": "5.12.0",
     "babel-plugin-istanbul": "6.1.1",
     "eslint": "8.9.0",
     "eslint-config-next": "12.0.10",
