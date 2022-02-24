@@ -21,7 +21,7 @@
     "test:e2e": "jest --collectCoverage --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@graphql-tools/schema": "8.3.1",
+    "@graphql-tools/schema": "8.3.2",
     "@nestjs/common": "8.3.1",
     "@nestjs/config": "1.2.0",
     "@nestjs/core": "8.3.1",
