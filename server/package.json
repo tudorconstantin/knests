@@ -49,7 +49,7 @@
     "type-graphql": "1.1.1"
   },
   "devDependencies": {
-    "@apollo/gateway": "0.48.3",
+    "@apollo/gateway": "0.49.0",
     "@istanbuljs/nyc-config-typescript": "1.0.2",
     "@nestjs/cli": "8.2.3",
     "@nestjs/schematics": "8.0.8",
