@@ -32,7 +32,7 @@
     "apollo-server-express": "3.8.1",
     "bcrypt": "5.0.1",
     "class-transformer": "0.5.1",
-    "class-validator": "0.13.2",
+    "class-validator": "0.14.0",
     "graphql": "15.8.0",
     "graphql-tools": "8.2.11",
     "knex": "1.0.7",
