@@ -8,7 +8,7 @@
   "dependencies": {
     "@istanbuljs/nyc-config-typescript": "1.0.2",
     "@types/jest": "27.5.1",
-    "@types/node": "16.11.36",
+    "@types/node": "18.18.6",
     "jest": "27.5.1",
     "jest-playwright-preset": "1.7.2",
     "nyc": "15.1.0",
