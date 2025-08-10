@@ -35,7 +35,7 @@
     "class-validator": "0.14.0",
     "graphql": "15.8.0",
     "graphql-tools": "8.2.11",
-    "knex": "1.0.7",
+    "knex": "2.4.0",
     "knex-migrate": "1.7.4",
     "nestjs-knex": "2.0.0",
     "passport": "0.5.2",
