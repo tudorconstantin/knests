@@ -57,7 +57,7 @@
     "@types/bcrypt": "5.0.0",
     "@types/jest": "27.5.1",
     "@types/knex": "0.16.1",
-    "@types/passport-jwt": "3.0.6",
+    "@types/passport-jwt": "3.0.13",
     "@types/node": "16.11.36",
     "@types/supertest": "2.0.12",
     "eslint": "8.16.0",
